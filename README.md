@@ -16,3 +16,11 @@ compliance:
 - Level 1. Foundational
 - Level 2. Advanced
 - Level 3. Expert
+
+Repository structure:
+- doc
+  - Contains network diagrams and project documentation
+- ref
+  - Contains references with a short description of the website
+- src
+  - Contains Ansible scripts to recreate the networks
