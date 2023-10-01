@@ -11,8 +11,8 @@ experience allow.
 The Cybersecurity Maturity Model Certification 2.0 is a Department of
 Defense (DoD) framework for information security in government contractor and
 subcontractor businesses.  The CMMC 2.0 is broken up into four levels of
-compliance:
-Level 0: Non compliant
-Level 1. Foundational
-Level 2. Advanced
-Level 3. Expert
+compliance:  
+- Level 0: Non compliant
+- Level 1. Foundational
+- Level 2. Advanced
+- Level 3. Expert
