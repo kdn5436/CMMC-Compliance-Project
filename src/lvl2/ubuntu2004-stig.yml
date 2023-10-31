@@ -1,4 +1,4 @@
-- hosts: windows
+- hosts: ubuntu
   gather_facts: no
   roles:
-    - win2022STIG
+    - ubuntu2004STIG
