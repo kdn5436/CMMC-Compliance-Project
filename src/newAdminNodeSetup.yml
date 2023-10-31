@@ -6,8 +6,8 @@
 # This playbook upgrades a new installation, installs necessary packages, and
 # enables firewalld. The tasks are done conditionally depending on the Linux
 # distribution family. It does not support the ArchLinux family of distros.
-# This is because tehy are not stable enough for a CMMC compliant business
-# setting. It also dies not support Windows.  A separate script will be used to
+# This is because they are not stable enough for a CMMC compliant business
+# setting. It also does not support Windows.  A separate script will be used to
 # configure Windows nodes if necessary. To keep the script more simple, all
 # installations are standardized on firewalld. This also allows for more ease of
 # administration: only one type of firewall needs to be configured.
