@@ -16,3 +16,7 @@ Links and references for the project:
   - https://docs.openstack.org/2023.1/
 - NIST 800-171 r2 - compliance for level 2
   - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171r2.pdf
+- Ansible/Openstack Openstack documentation
+  - https://docs.openstack.org/project-deploy-guide/openstack-ansible/latest/
+- Example Ansible/OpenStack playbooks
+  - https://github.com/openstack/openstack-ansible
