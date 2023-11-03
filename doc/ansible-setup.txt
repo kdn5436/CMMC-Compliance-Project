@@ -1,0 +1,9 @@
+Openstack-ansible setup instructions
+
+install ansible (if openstack.cloud collection isn't included, install it separately with ansible-galaxy collection install openstack.cloud)
+
+From openstack, download {project-name}-openrc.sh
+
+in terminal run: source {project-name}-openrc.sh
+
+run ansible plays
