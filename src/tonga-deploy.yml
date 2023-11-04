@@ -1,34 +1,65 @@
 - hosts: localhost
   tasks:
+    - name: update security group tcp rule
+      openstack.cloud.security_group_rule:
+        security_group: default
+        protocol: tcp
+        remote_ip_prefix: 0.0.0.0/0
+    - name: update security group udp rule
+      openstack.cloud.security_group_rule:
+        security_group: default
+        protocol: udp
+        remote_ip_prefix: 0.0.0.0/0
+    - name: update security group icmp rule
+      openstack.cloud.security_group_rule:
+        security_group: default
+        protocol: icmp
+        remote_ip_prefix: 0.0.0.0/0
     - name: create guest network
       openstack.cloud.network:
         state: present
-        name: tonga_net
+        name: guest_net
         external: false
+        port_security_enabled: false
     - name: create guest subnet
       openstack.cloud.subnet:
         state: present
-        network_name: tonga_net
+        network_name: guest_net
         name: guest_net
         cidr: 192.168.0.0/24
+        gateway_ip: 192.168.0.1
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
+    - name: create workstation network
+      openstack.cloud.network:
+        state: present
+        name: workstation_net
+        external: false
+        port_security_enabled: false
     - name: create workstation subnet
       openstack.cloud.subnet:
         state: present
-        network_name: tonga_net
+        network_name: workstation_net
         name: workstation_net
         cidr: 192.168.1.0/24
+        gateway_ip: 192.168.1.1
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
+    - name: create office network
+      openstack.cloud.network:
+        state: present
+        name: office_net
+        external: false
+        port_security_enabled: false
     - name: create office subnet
       openstack.cloud.subnet:
         state: present
-        network_name: tonga_net
+        network_name: office_net
         name: office_net
         cidr: 192.168.2.0/24
+        gateway_ip: 192.168.2.1
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
@@ -36,36 +67,39 @@
       openstack.cloud.server:
         state: present
         name: ansible_vm1
-        image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
-        flavor: medium
-        network: tonga_net
+        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
+        flavor: large
+        network: guest_net
         auto_ip: false
         wait: true
     - name: Create Another guest
       openstack.cloud.server:
         state: present
         name: ansible_vm2
-        image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
-        flavor: medium
-        network: tonga_net
+        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
+        flavor: large
+        network: guest_net
         auto_ip: false
         wait: true
     - name: Create an office guest
       openstack.cloud.server:
         state: present
-        name: ansible_vm2
-        image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
-        flavor: medium
-        network: tonga_net
+        name: ansible_vm3
+        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
+        flavor: large
+        network: office_net
         auto_ip: false
         wait: true
     - name: Create a router connecting the networks
       openstack.cloud.router:
         state: present
         name: router2
-        network: tonga_net
+        network: MAIN-NAT
         interfaces:
-          - guest_net
-          - workstation_net
-          - office_net
+          - net: office_net
+            subnet: office_net
+          - net: workstation_net
+            subnet: workstation_net
+          - net: guest_net
+            subnet: guest_net
 
