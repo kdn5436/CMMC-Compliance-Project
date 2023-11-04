@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks:
+    - name: Ensure everything works
+      openstack.cloud.project_info:
