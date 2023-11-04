@@ -3,14 +3,32 @@
     - name: create guest network
       openstack.cloud.network:
         state: present
-        name: guest_net
+        name: tonga_net
         external: false
-    - name: add subnet to guest network
+    - name: create guest subnet
       openstack.cloud.subnet:
         state: present
-        network_name: guest_net
-        name: net1subnet
+        network_name: tonga_net
+        name: guest_net
         cidr: 192.168.0.0/24
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
+    - name: create workstation subnet
+      openstack.cloud.subnet:
+        state: present
+        network_name: tonga_net
+        name: workstation_net
+        cidr: 192.168.1.0/24
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
+    - name: create office subnet
+      openstack.cloud.subnet:
+        state: present
+        network_name: tonga_net
+        name: office_net
+        cidr: 192.168.2.0/24
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
@@ -20,7 +38,7 @@
         name: ansible_vm1
         image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
         flavor: medium
-        network: guest_net
+        network: tonga_net
         auto_ip: false
         wait: true
     - name: Create Another guest
@@ -29,7 +47,25 @@
         name: ansible_vm2
         image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
         flavor: medium
-        network: guest_net
+        network: tonga_net
         auto_ip: false
         wait: true
+    - name: Create an office guest
+      openstack.cloud.server:
+        state: present
+        name: ansible_vm2
+        image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
+        flavor: medium
+        network: tonga_net
+        auto_ip: false
+        wait: true
+    - name: Create a router connecting the networks
+      openstack.cloud.router:
+        state: present
+        name: router2
+        network: tonga_net
+        interfaces:
+          - guest_net
+          - workstation_net
+          - office_net
 
