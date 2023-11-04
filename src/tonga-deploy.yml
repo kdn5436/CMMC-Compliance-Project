@@ -1,0 +1,35 @@
+- hosts: localhost
+  tasks:
+    - name: create guest network
+      openstack.cloud.network:
+        state: present
+        name: guest_net
+        external: false
+    - name: add subnet to guest network
+      openstack.cloud.subnet:
+        state: present
+        network_name: guest_net
+        name: net1subnet
+        cidr: 192.168.0.0/24
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
+    - name: Create one guest host
+      openstack.cloud.server:
+        state: present
+        name: ansible_vm1
+        image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
+        flavor: medium
+        network: guest_net
+        auto_ip: false
+        wait: true
+    - name: Create Another guest
+      openstack.cloud.server:
+        state: present
+        name: ansible_vm2
+        image: 1b97adb7-4af2-4bb9-b36b-02cb9a471185
+        flavor: medium
+        network: guest_net
+        auto_ip: false
+        wait: true
+
