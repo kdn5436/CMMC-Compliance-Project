@@ -20,3 +20,7 @@ Links and references for the project:
   - https://docs.openstack.org/project-deploy-guide/openstack-ansible/latest/
 - Example Ansible/OpenStack playbooks
   - https://github.com/openstack/openstack-ansible
+- CMMC Assessment Guide Level 2
+  - https://dodcio.defense.gov/Portals/0/Documents/CMMC/AG_Level2_MasterV2.0_FINAL_202112016_508.pdf
+- Microsoft Technical Reference Guide for CMMC 2.0
+  - https://www.microsoft.com/en-us/download/details.aspx?id=103401
