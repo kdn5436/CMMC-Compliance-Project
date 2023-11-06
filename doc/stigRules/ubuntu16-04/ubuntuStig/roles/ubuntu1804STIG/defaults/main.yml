@@ -1,0 +1,331 @@
+# R-219156 UBTU-18-010017
+ubuntu1804STIG_stigrule_219156_Manage: True
+ubuntu1804STIG_stigrule_219156__etc_apt_apt_conf_d_50unattended_upgrades_Line: 'Unattended-Upgrade::Remove-Unused-Dependencies "true";'
+# R-219157 UBTU-18-010018
+ubuntu1804STIG_stigrule_219157_Manage: True
+ubuntu1804STIG_stigrule_219157_nis_State: absent
+# R-219158 UBTU-18-010019
+ubuntu1804STIG_stigrule_219158_Manage: True
+ubuntu1804STIG_stigrule_219158_rsh_server_State: absent
+# R-219159 UBTU-18-010021
+# Disabled due to not being a standard package
+ubuntu1804STIG_stigrule_219159_Manage: False
+ubuntu1804STIG_stigrule_219159_mfetp_State: present
+# R-219160 UBTU-18-010022
+ubuntu1804STIG_stigrule_219160_Manage: True
+ubuntu1804STIG_stigrule_219160_rsyslog_State: present
+ubuntu1804STIG_stigrule_219160_rsyslog_enable_Enabled: yes
+ubuntu1804STIG_stigrule_219160_rsyslog_start_State: started
+# R-219161 UBTU-18-010023
+ubuntu1804STIG_stigrule_219161_Manage: True
+ubuntu1804STIG_stigrule_219161_ufw_State: present
+# R-219167 UBTU-18-010035
+ubuntu1804STIG_stigrule_219167_Manage: True
+ubuntu1804STIG_stigrule_219167__etc_gdm3_greeter_dconf_defaults_enable_Value: 'true'
+ubuntu1804STIG_stigrule_219167__etc_gdm3_greeter_dconf_defaults_text_Value: '''You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.\nBy using this IS (which includes any device attached to this IS), you consent to the following conditions:\n-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.\n-At any time, the USG may inspect and seize data stored on this IS.\n-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.\n-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.\n-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.'''
+# R-219170 UBTU-18-010038
+ubuntu1804STIG_stigrule_219170_Manage: True
+ubuntu1804STIG_stigrule_219170_banner_Line: banner /etc/issue
+ubuntu1804STIG_stigrule_219170__etc_issue_Dest: /etc/issue
+ubuntu1804STIG_stigrule_219170__etc_issue_Content: 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
+
+By using this IS (which includes any device attached to this IS), you consent to the following conditions:
+
+-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
+
+-At any time, the USG may inspect and seize data stored on this IS.
+
+-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
+
+-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
+
+-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.
+
+'
+# R-219172 UBTU-18-010100
+ubuntu1804STIG_stigrule_219172_Manage: True
+ubuntu1804STIG_stigrule_219172__etc_security_pwquality_conf_Line: 'ucredit=-1'
+# R-219173 UBTU-18-010101
+ubuntu1804STIG_stigrule_219173_Manage: True
+ubuntu1804STIG_stigrule_219173__etc_security_pwquality_conf_Line: 'lcredit=-1'
+# R-219174 UBTU-18-010102
+ubuntu1804STIG_stigrule_219174_Manage: True
+ubuntu1804STIG_stigrule_219174__etc_security_pwquality_conf_Line: 'dcredit=-1'
+# R-219175 UBTU-18-010103
+ubuntu1804STIG_stigrule_219175_Manage: True
+ubuntu1804STIG_stigrule_219175__etc_security_pwquality_conf_Line: 'difok=8'
+# R-219176 UBTU-18-010104
+ubuntu1804STIG_stigrule_219176_Manage: True
+ubuntu1804STIG_stigrule_219176__etc_login_defs_Line: 'ENCRYPT_METHOD SHA512'
+# R-219177 UBTU-18-010105
+ubuntu1804STIG_stigrule_219177_Manage: True
+ubuntu1804STIG_stigrule_219177_telnetd_State: absent
+# R-219178 UBTU-18-010106
+ubuntu1804STIG_stigrule_219178_Manage: True
+ubuntu1804STIG_stigrule_219178__etc_login_defs_Line: 'PASS_MIN_DAYS 1'
+# R-219179 UBTU-18-010107
+ubuntu1804STIG_stigrule_219179_Manage: True
+ubuntu1804STIG_stigrule_219179__etc_login_defs_Line: 'PASS_MAX_DAYS 60'
+# R-219181 UBTU-18-010109
+ubuntu1804STIG_stigrule_219181_Manage: True
+ubuntu1804STIG_stigrule_219181__etc_security_pwquality_conf_Line: 'minlen=15'
+# R-219184 UBTU-18-010113
+ubuntu1804STIG_stigrule_219184_Manage: True
+ubuntu1804STIG_stigrule_219184__etc_security_pwquality_conf_Line: 'dictcheck=1'
+# R-219210 UBTU-18-010145
+ubuntu1804STIG_stigrule_219210_Manage: True
+ubuntu1804STIG_stigrule_219210__etc_security_pwquality_conf_Line: 'ocredit=-1'
+# R-219212 UBTU-18-010151
+ubuntu1804STIG_stigrule_219212_Manage: True
+ubuntu1804STIG_stigrule_219212_systemctl_mask_ctrl_alt_del_target_Command: systemctl mask ctrl-alt-del.target
+# R-219213 UBTU-18-010201
+ubuntu1804STIG_stigrule_219213_Manage: True
+ubuntu1804STIG_stigrule_219213__etc_audit_rules_d_stig_rules_tallylog_Line: '-w /var/log/tallylog -p wa -k logins'
+# R-219214 UBTU-18-010202
+ubuntu1804STIG_stigrule_219214_Manage: True
+ubuntu1804STIG_stigrule_219214__etc_audit_rules_d_stig_rules_faillog_Line: '-w /var/log/faillog -p wa -k logins'
+# R-219215 UBTU-18-010203
+ubuntu1804STIG_stigrule_219215_Manage: True
+ubuntu1804STIG_stigrule_219215__etc_audit_rules_d_stig_rules_lastlog_Line: '-w /var/log/lastlog -p wa -k logins'
+# R-219216 UBTU-18-010237
+ubuntu1804STIG_stigrule_219216_Manage: True
+ubuntu1804STIG_stigrule_219216__etc_audit_rules_d_stig_rules_sudo_log_Line: '-w /var/log/sudo.log -p wa -k actions'
+# R-219217 UBTU-18-010238
+ubuntu1804STIG_stigrule_219217_Manage: True
+ubuntu1804STIG_stigrule_219217__etc_audit_rules_d_stig_rules__var_log_wtmp_Line: '-w /var/log/wtmp -p wa -k logins'
+# R-219218 UBTU-18-010239
+ubuntu1804STIG_stigrule_219218_Manage: True
+ubuntu1804STIG_stigrule_219218__etc_audit_rules_d_stig_rules__var_run_utmp_Line: '-w /var/run/utmp -p wa -k logins'
+# R-219219 UBTU-18-010240
+ubuntu1804STIG_stigrule_219219_Manage: True
+ubuntu1804STIG_stigrule_219219__etc_audit_rules_d_stig_rules__var_log_btmp_Line: '-w /var/log/btmp -p wa -k logins'
+# R-219220 UBTU-18-010244
+ubuntu1804STIG_stigrule_219220_Manage: True
+ubuntu1804STIG_stigrule_219220__etc_audit_rules_d_stig_rules__etc_passwd_Line: '-w /etc/passwd -p wa -k usergroup_modification'
+# R-219221 UBTU-18-010245
+ubuntu1804STIG_stigrule_219221_Manage: True
+ubuntu1804STIG_stigrule_219221__etc_audit_rules_d_stig_rules__etc_group_Line: '-w /etc/group -p wa -k usergroup_modification'
+# R-219222 UBTU-18-010246
+ubuntu1804STIG_stigrule_219222_Manage: True
+ubuntu1804STIG_stigrule_219222__etc_audit_rules_d_stig_rules__etc_gshadow_Line: '-w /etc/gshadow -p wa -k usergroup_modification'
+# R-219223 UBTU-18-010247
+ubuntu1804STIG_stigrule_219223_Manage: True
+ubuntu1804STIG_stigrule_219223__etc_audit_rules_d_stig_rules__etc_shadow_Line: '-w /etc/shadow -p wa -k usergroup_modification'
+# R-219224 UBTU-18-010248
+ubuntu1804STIG_stigrule_219224_Manage: True
+ubuntu1804STIG_stigrule_219224__etc_audit_rules_d_stig_rules__etc_security_opasswd_Line: '-w /etc/security/opasswd -p wa -k usergroup_modification'
+# R-219225 UBTU-18-010250
+ubuntu1804STIG_stigrule_219225_Manage: True
+ubuntu1804STIG_stigrule_219225_auditd_State: present
+ubuntu1804STIG_stigrule_219225_auditd_enable_Enabled: yes
+# R-219226 UBTU-18-010300
+ubuntu1804STIG_stigrule_219226_Manage: True
+ubuntu1804STIG_stigrule_219226__etc_audit_auditd_conf_Line: 'action_mail_acct = root'
+# R-219227 UBTU-18-010301
+ubuntu1804STIG_stigrule_219227_Manage: True
+ubuntu1804STIG_stigrule_219227__etc_audit_auditd_conf_Line: 'disk_full_action = SINGLE'
+# R-219238 UBTU-18-010315
+ubuntu1804STIG_stigrule_219238_Manage: True
+ubuntu1804STIG_stigrule_219238__etc_audit_rules_d_stig_rules__bin_su_Line: '-a always,exit -F path=/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change'
+# R-219239 UBTU-18-010316
+ubuntu1804STIG_stigrule_219239_Manage: True
+ubuntu1804STIG_stigrule_219239__etc_audit_rules_d_stig_rules__usr_bin_chfn_Line: '-a always,exit -F path=/usr/bin/chfn -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-chfn'
+# R-219240 UBTU-18-010317
+ubuntu1804STIG_stigrule_219240_Manage: True
+ubuntu1804STIG_stigrule_219240__etc_audit_rules_d_stig_rules__bin_mount_Line: '-a always,exit -F path=/bin/mount -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-mount'
+# R-219241 UBTU-18-010318
+ubuntu1804STIG_stigrule_219241_Manage: True
+ubuntu1804STIG_stigrule_219241__etc_audit_rules_d_stig_rules__bin_umount_Line: '-a always,exit -F path=/bin/umount -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-umount'
+# R-219242 UBTU-18-010319
+ubuntu1804STIG_stigrule_219242_Manage: True
+ubuntu1804STIG_stigrule_219242__etc_audit_rules_d_stig_rules__usr_bin_ssh_agent_Line: '-a always,exit -F path=/usr/bin/ssh-agent -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh'
+# R-219243 UBTU-18-010320
+ubuntu1804STIG_stigrule_219243_Manage: True
+ubuntu1804STIG_stigrule_219243__etc_audit_rules_d_stig_rules__usr_lib_openssh_ssh_keysign_Line: '-a always,exit -F path=/usr/lib/openssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh'
+# R-219244 UBTU-18-010321
+ubuntu1804STIG_stigrule_219244_Manage: True
+ubuntu1804STIG_stigrule_219244__etc_audit_rules_d_stig_rules_setxattr_b32_1_Line: '-a always,exit -F arch=b32 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid>=1000 -F auid!=-1 -k perm_mod'
+ubuntu1804STIG_stigrule_219244__etc_audit_rules_d_stig_rules_setxattr_b32_2_Line: '-a always,exit -F arch=b32 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid=0 -k perm_mod'
+ubuntu1804STIG_stigrule_219244__etc_audit_rules_d_stig_rules_setxattr_b64_1_Line: '-a always,exit -F arch=b64 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid>=1000 -F auid!=-1 -k perm_mod'
+ubuntu1804STIG_stigrule_219244__etc_audit_rules_d_stig_rules_setxattr_b64_2_Line: '-a always,exit -F arch=b64 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid=0 -k perm_mod'
+# R-219250 UBTU-18-010327
+ubuntu1804STIG_stigrule_219250_Manage: True
+ubuntu1804STIG_stigrule_219250__etc_audit_rules_d_stig_rules_chown_b32_1_Line: '-a always,exit -F arch=b32 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+ubuntu1804STIG_stigrule_219250__etc_audit_rules_d_stig_rules_chown_b64_1_Line: '-a always,exit -F arch=b64 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-219254 UBTU-18-010331
+ubuntu1804STIG_stigrule_219254_Manage: True
+ubuntu1804STIG_stigrule_219254__etc_audit_rules_d_stig_rules_chmod_b32_1_Line: '-a always,exit -F arch=b32 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+ubuntu1804STIG_stigrule_219254__etc_audit_rules_d_stig_rules_chmod_b64_1_Line: '-a always,exit -F arch=b64 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-219257 UBTU-18-010334
+ubuntu1804STIG_stigrule_219257_Manage: True
+ubuntu1804STIG_stigrule_219257__etc_audit_rules_d_stig_rules_open_b32_EPERM_Line: '-a always,exit -F arch=b32 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k perm_access'
+ubuntu1804STIG_stigrule_219257__etc_audit_rules_d_stig_rules_open_b32_EACCES_Line: '-a always,exit -F arch=b32 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k perm_access'
+ubuntu1804STIG_stigrule_219257__etc_audit_rules_d_stig_rules_open_b64_EPERM_Line: '-a always,exit -F arch=b64 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k perm_access'
+ubuntu1804STIG_stigrule_219257__etc_audit_rules_d_stig_rules_open_b64_EACCES_Line: '-a always,exit -F arch=b64 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k perm_access'
+# R-219263 UBTU-18-010340
+ubuntu1804STIG_stigrule_219263_Manage: True
+ubuntu1804STIG_stigrule_219263__etc_audit_rules_d_stig_rules__usr_bin_sudo_Line: '-a always,exit -F path=/usr/bin/sudo -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-219264 UBTU-18-010341
+ubuntu1804STIG_stigrule_219264_Manage: True
+ubuntu1804STIG_stigrule_219264__etc_audit_rules_d_stig_rules__usr_bin_sudoedit_Line: '-a always,exit -F path=/usr/bin/sudoedit -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-219265 UBTU-18-010342
+ubuntu1804STIG_stigrule_219265_Manage: True
+ubuntu1804STIG_stigrule_219265__etc_audit_rules_d_stig_rules__usr_bin_chsh_Line: '-a always,exit -F path=/usr/bin/chsh -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-219266 UBTU-18-010343
+ubuntu1804STIG_stigrule_219266_Manage: True
+ubuntu1804STIG_stigrule_219266__etc_audit_rules_d_stig_rules__usr_bin_newgrp_Line: '-a always,exit -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-219267 UBTU-18-010344
+ubuntu1804STIG_stigrule_219267_Manage: True
+ubuntu1804STIG_stigrule_219267__etc_audit_rules_d_stig_rules__usr_bin_chcon_Line: '-a always,exit -F path=/usr/bin/chcon -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-219268 UBTU-18-010345
+ubuntu1804STIG_stigrule_219268_Manage: True
+ubuntu1804STIG_stigrule_219268__etc_audit_rules_d_stig_rules__sbin_apparmor_parser_Line: '-a always,exit -F path=/sbin/apparmor_parser -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-219269 UBTU-18-010346
+ubuntu1804STIG_stigrule_219269_Manage: True
+ubuntu1804STIG_stigrule_219269__etc_audit_rules_d_stig_rules__usr_bin_setfacl_Line: '-a always,exit -F path=/usr/bin/setfacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-219270 UBTU-18-010347
+ubuntu1804STIG_stigrule_219270_Manage: True
+ubuntu1804STIG_stigrule_219270__etc_audit_rules_d_stig_rules__usr_bin_chacl_Line: '-a always,exit -F path=/usr/bin/chacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-219271 UBTU-18-010348
+ubuntu1804STIG_stigrule_219271_Manage: True
+ubuntu1804STIG_stigrule_219271__etc_audit_rules_d_stig_rules__usr_bin_passwd_Line: '-a always,exit -F path=/usr/bin/passwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd'
+# R-219272 UBTU-18-010349
+ubuntu1804STIG_stigrule_219272_Manage: True
+ubuntu1804STIG_stigrule_219272__etc_audit_rules_d_stig_rules__sbin_unix_update_Line: '-a always,exit -F path=/sbin/unix_update -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-unix-update'
+# R-219273 UBTU-18-010350
+ubuntu1804STIG_stigrule_219273_Manage: True
+ubuntu1804STIG_stigrule_219273__etc_audit_rules_d_stig_rules__usr_bin_gpasswd_Line: '-a always,exit -F path=/usr/bin/gpasswd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-gpasswd'
+# R-219274 UBTU-18-010351
+ubuntu1804STIG_stigrule_219274_Manage: True
+ubuntu1804STIG_stigrule_219274__etc_audit_rules_d_stig_rules__usr_bin_chage_Line: '-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-chage'
+# R-219275 UBTU-18-010352
+ubuntu1804STIG_stigrule_219275_Manage: True
+ubuntu1804STIG_stigrule_219275__etc_audit_rules_d_stig_rules__usr_bin_usermod_Line: '-a always,exit -F path=/usr/sbin/usermod -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-usermod'
+# R-219276 UBTU-18-010353
+ubuntu1804STIG_stigrule_219276_Manage: True
+ubuntu1804STIG_stigrule_219276__etc_audit_rules_d_stig_rules__usr_bin_crontab_Line: '-a always,exit -F path=/usr/bin/crontab -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-crontab'
+# R-219277 UBTU-18-010354
+ubuntu1804STIG_stigrule_219277_Manage: True
+ubuntu1804STIG_stigrule_219277__etc_audit_rules_d_stig_rules__usr_sbin_pam_timestamp_check_Line: '-a always,exit -F path=/usr/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-pam_timestamp_check'
+# R-219279 UBTU-18-010356
+ubuntu1804STIG_stigrule_219279_Manage: True
+ubuntu1804STIG_stigrule_219279__etc_audit_rules_d_stig_rules_finit_module_b32_Line: '-a always,exit -F arch=b32 -S finit_module -F auid>=1000 -F auid!=4294967295 -k module_chng'
+ubuntu1804STIG_stigrule_219279__etc_audit_rules_d_stig_rules_finit_module_b64_Line: '-a always,exit -F arch=b64 -S finit_module -F auid>=1000 -F auid!=4294967295 -k module_chng'
+# R-219281 UBTU-18-010358
+ubuntu1804STIG_stigrule_219281_Manage: True
+ubuntu1804STIG_stigrule_219281__etc_audit_rules_d_stig_rules_execve_b64_euid_Line: '-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -F key=execpriv'
+ubuntu1804STIG_stigrule_219281__etc_audit_rules_d_stig_rules_execve_b64_egid_Line: '-a always,exit -F arch=b64 -S execve -C gid!=egid -F egid=0 -F key=execpriv'
+ubuntu1804STIG_stigrule_219281__etc_audit_rules_d_stig_rules_execve_b32_euid_Line: '-a always,exit -F arch=b32 -S execve -C uid!=euid -F euid=0 -F key=execpriv'
+ubuntu1804STIG_stigrule_219281__etc_audit_rules_d_stig_rules_execve_b32_egid_Line: '-a always,exit -F arch=b32 -S execve -C gid!=egid -F egid=0 -F key=execpriv'
+# R-219287 UBTU-18-010375
+ubuntu1804STIG_stigrule_219287_Manage: True
+ubuntu1804STIG_stigrule_219287__etc_audit_rules_d_stig_rules_unlink_b64_Line: '-a always,exit -F arch=b64 -S unlink,unlinkat,rename,renameat,rmdir -Fauid>=1000 -F auid!=4294967295 -k delete'
+ubuntu1804STIG_stigrule_219287__etc_audit_rules_d_stig_rules_unlink_b32_Line: '-a always,exit -F arch=b32 -S unlink,unlinkat,rename,renameat,rmdir -F auid>=1000 -F auid!=4294967295 -k delete'
+# R-219291 UBTU-18-010379
+ubuntu1804STIG_stigrule_219291_Manage: True
+ubuntu1804STIG_stigrule_219291__etc_audit_rules_d_stig_rules_init_module_b32_Line: '-a always,exit -F arch=b32 -S init_module -S finit_module -k modules'
+ubuntu1804STIG_stigrule_219291__etc_audit_rules_d_stig_rules_init_module_b64_Line: '-a always,exit -F arch=b64 -S init_module -S finit_module -k modules'
+# R-219296 UBTU-18-010387
+# A duplicate of 219291
+# duplicate of 219291
+# R-219297 UBTU-18-010388
+ubuntu1804STIG_stigrule_219297_Manage: True
+ubuntu1804STIG_stigrule_219297__etc_audit_rules_d_stig_rules_delete_module_b32_Line: '-a always,exit -F arch=b32 -S delete_module -k modules'
+ubuntu1804STIG_stigrule_219297__etc_audit_rules_d_stig_rules_delete_module_b64_Line: '-a always,exit -F arch=b64 -S delete_module -k modules'
+# R-219298 UBTU-18-010389
+ubuntu1804STIG_stigrule_219298_Manage: True
+ubuntu1804STIG_stigrule_219298__etc_audit_rules_d_stig_rules__sbin_modprobe_Line: '-w /sbin/modprobe -p x -k modules'
+# R-219299 UBTU-18-010391
+ubuntu1804STIG_stigrule_219299_Manage: True
+ubuntu1804STIG_stigrule_219299__etc_audit_rules_d_stig_rules__bin_kmod_Line: '-w /bin/kmod -p x -k modules'
+# R-219300 UBTU-18-010392
+ubuntu1804STIG_stigrule_219300_Manage: True
+ubuntu1804STIG_stigrule_219300__etc_audit_rules_d_stig_rules__bin_fdisk_Line: '-w /sbin/fdisk -p x -k fdisk'
+# R-219301 UBTU-18-010400
+ubuntu1804STIG_stigrule_219301_Manage: True
+ubuntu1804STIG_stigrule_219301__etc_security_limits_conf_Line: '* hard maxlogins 10'
+# R-219303 UBTU-18-010402
+ubuntu1804STIG_stigrule_219303_Manage: True
+ubuntu1804STIG_stigrule_219303__etc_profile_d_autologout_sh_Dest: /etc/profile.d/autologout.sh
+ubuntu1804STIG_stigrule_219303__etc_profile_d_autologout_sh_Content: 'TMOUT=900
+
+readonly TMOUT
+
+export TMOUT'
+# R-219304 UBTU-18-010403
+ubuntu1804STIG_stigrule_219304_Manage: True
+ubuntu1804STIG_stigrule_219304_vlock_State: present
+# R-219307 UBTU-18-010411
+ubuntu1804STIG_stigrule_219307_Manage: True
+ubuntu1804STIG_stigrule_219307_Ciphers_Line: Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+# R-219308 UBTU-18-010412
+ubuntu1804STIG_stigrule_219308_Manage: True
+ubuntu1804STIG_stigrule_219308_Protocol_Line: Protocol 2
+# R-219309 UBTU-18-010414
+ubuntu1804STIG_stigrule_219309_Manage: True
+ubuntu1804STIG_stigrule_219309_UsePAM_Line: UsePAM yes
+# R-219310 UBTU-18-010415
+ubuntu1804STIG_stigrule_219310_Manage: True
+ubuntu1804STIG_stigrule_219310_ClientAliveCountMax_Line: ClientAliveCountMax 1
+# R-219311 UBTU-18-010416
+ubuntu1804STIG_stigrule_219311_Manage: True
+ubuntu1804STIG_stigrule_219311_ClientAliveInterval_Line: ClientAliveInterval 600
+# R-219312 UBTU-18-010417
+ubuntu1804STIG_stigrule_219312_Manage: True
+ubuntu1804STIG_stigrule_219312_MACs_Line: MACs hmac-sha2-512,hmac-sha2-256
+# R-219313 UBTU-18-010420
+ubuntu1804STIG_stigrule_219313_Manage: True
+ubuntu1804STIG_stigrule_219313_ssh_State: present
+ubuntu1804STIG_stigrule_219313_sshd_active_Enabled: yes
+ubuntu1804STIG_stigrule_219313_sshd_start_State: started
+# R-219314 UBTU-18-010424
+ubuntu1804STIG_stigrule_219314_Manage: True
+ubuntu1804STIG_stigrule_219314_PermitEmptyPasswords_Line: PermitEmptyPasswords no
+ubuntu1804STIG_stigrule_219314_PermitUserEnvironment_Line: PermitUserEnvironment no
+# R-219318 UBTU-18-010431
+ubuntu1804STIG_stigrule_219318_Manage: True
+ubuntu1804STIG_stigrule_219318_libpam_pkcs11_State: present
+# R-219319 UBTU-18-010432
+ubuntu1804STIG_stigrule_219319_Manage: True
+ubuntu1804STIG_stigrule_219319_opensc_pkcs11_State: present
+# R-219322 UBTU-18-010437
+ubuntu1804STIG_stigrule_219322_Manage: True
+ubuntu1804STIG_stigrule_219322_libpam_apparmor_State: present
+ubuntu1804STIG_stigrule_219322_apparmor_enable_Enabled: yes
+ubuntu1804STIG_stigrule_219322_apparmor_start_State: started
+# R-219323 UBTU-18-010441
+# A partial of 219322
+ubuntu1804STIG_stigrule_219323_Manage: True
+ubuntu1804STIG_stigrule_219323_apparmor_State: present
+# R-219324 UBTU-18-010442
+# A duplicate of 219323
+# duplicate of 219323
+# R-219328 UBTU-18-010448
+ubuntu1804STIG_stigrule_219328_Manage: True
+ubuntu1804STIG_stigrule_219328__etc_login_defs_Line: 'UMASK 077'
+# R-219330 UBTU-18-010500
+ubuntu1804STIG_stigrule_219330_Manage: True
+ubuntu1804STIG_stigrule_219330_net_ipv4_tcp_syncookies_Value: 1
+ubuntu1804STIG_stigrule_219330__etc_sysctl_conf_Line: 'net.ipv4.tcp_syncookies = 1'
+# R-219335 UBTU-18-010505
+ubuntu1804STIG_stigrule_219335_Manage: True
+ubuntu1804STIG_stigrule_219335_kdump_disable_Enabled: no
+# R-219337 UBTU-18-010507
+ubuntu1804STIG_stigrule_219337_Manage: True
+ubuntu1804STIG_stigrule_219337_ufw_active_Enabled: yes
+ubuntu1804STIG_stigrule_219337_ufw_start_State: started
+# R-219339 UBTU-18-010509
+ubuntu1804STIG_stigrule_219339_Manage: True
+ubuntu1804STIG_stigrule_219339__etc_modprobe_d_DISASTIG_conf_Dest: /etc/modprobe.d/DISASTIG.conf
+ubuntu1804STIG_stigrule_219339__etc_modprobe_d_DISASTIG_conf_Content: 'install usb-storage /bin/true
+
+blacklist usb-storage'
+# R-219343 UBTU-18-010515
+ubuntu1804STIG_stigrule_219343_Manage: True
+ubuntu1804STIG_stigrule_219343_aide_State: present
+# R-233779 UBTU-18-010418
+ubuntu1804STIG_stigrule_233779_Manage: True
+ubuntu1804STIG_stigrule_233779_X11Forwarding_Line: X11Forwarding no
+# R-233780 UBTU-18-010419
+ubuntu1804STIG_stigrule_233780_Manage: True
+ubuntu1804STIG_stigrule_233780_X11UseLocalhost_Line: X11UseLocalhost yes
