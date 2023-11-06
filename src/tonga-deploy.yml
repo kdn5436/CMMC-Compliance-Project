@@ -31,6 +31,22 @@
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
+    - name: create pci network
+      openstack.cloud.network:
+        state: present
+        name: pci_net
+        external: false
+        port_security_enabled: false
+    - name: create pci subnet
+      openstack.cloud.subnet:
+        state: present
+        network_name: pci_net
+        name: pci_net
+        cidr: 192.168.3.0/24
+        gateway_ip: 192.168.3.1
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
     - name: create workstation network
       openstack.cloud.network:
         state: present
@@ -81,6 +97,15 @@
         network: workstation_net
         auto_ip: false
         wait: true
+    - name: Create one pci host
+      openstack.cloud.server:
+        state: present
+        name: pci_machine1
+        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
+        flavor: large
+        network: pci_net
+        auto_ip: false
+        wait: true
     - name: Create an office host
       openstack.cloud.server:
         state: present
@@ -102,4 +127,6 @@
             subnet: workstation_net
           - net: guest_net
             subnet: guest_net
+          - net: pci_net
+            subnet: pci_net
 
