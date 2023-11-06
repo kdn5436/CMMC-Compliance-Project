@@ -2,3 +2,4 @@
   tasks:
     - name: Ensure everything works
       openstack.cloud.project_info:
+        cloud: openstack
