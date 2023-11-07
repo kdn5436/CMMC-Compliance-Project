@@ -10,7 +10,7 @@ sudo apt install ansible python3-openstacksdk python3-openstackclient
 
 - In a terminal run:
 ```
-source \<project-name\>-openrc.sh
+source <project-name>-openrc.sh
 ```
 
 - Run ansible-playbook \<scriptname.yml\>$
