@@ -15,5 +15,5 @@ source <project-name>-openrc.sh
 
 - Run the command:
 ```
-ansible-playbook <scriptname.yml>
+ansible-playbook <scriptname>.yml
 ```
