@@ -7,6 +7,7 @@ sudo apt install ansible python3-openstacksdk python3-openstackclient
 ```
 - From openstack, download \<project-name\>-openrc.sh and clouds.yml (API Access $\rightarrow$ Download OpenStack RC File)
   - Save this to /etc/openstack/clouds.yml or ~/.config/openstack/clouds.yml
+  - Edit the clouds.yml file to include your password
 
 - In a terminal run:
 ```
