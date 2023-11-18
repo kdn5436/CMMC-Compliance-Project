@@ -24,3 +24,13 @@ Links and references for the project:
   - https://dodcio.defense.gov/Portals/0/Documents/CMMC/AG_Level2_MasterV2.0_FINAL_202112016_508.pdf
 - Microsoft Technical Reference Guide for CMMC 2.0
   - https://www.microsoft.com/en-us/download/details.aspx?id=103401
+- Lysanne S. Post, Pengyue Guo, Nadira Saab, Wilfried Admiraal,
+  - Effects of remote labs on cognitive, behavioral, and affective learning outcomes in higher education, Computers & Education,
+  - Volume 140,
+  - 2019,
+  - 103596,
+  - ISSN 0360-1315,
+  - https://doi.org/10.1016/j.compedu.2019.103596.
+  - (https://www.sciencedirect.com/science/article/pii/S0360131519301435)
+  - Abstract: This literature review on remote labs in higher education examined the empirical research on learning benefits of such labs. The aim of this study was to investigate what kinds of learning outcomes were examined, how these effects were examined, and which findings these studies provided. Effects that were examined in the reviewed articles (k = 23) concerned cognitive, behavioral, and affective learning outcomes. Overall, results showed positive findings with respect to all three types of learning outcomes: students gained conceptual knowledge, were engaged in the lab, and were satisfied with learning in a remote lab context. However, evaluation approaches of the learning outcomes were quite superficial, because examining the educational benefits of the remote labs was not the main focus of most articles. Future research should address this issue to provide more rigorous evidence about possible benefits of remote labs on student learning in higher education.
+  - Keywords: Remote labs; Higher education; Learning outcomes; Review
