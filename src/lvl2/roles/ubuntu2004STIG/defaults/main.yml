@@ -1,0 +1,302 @@
+# R-238197 UBTU-20-010002
+ubuntu2004STIG_stigrule_238197_Manage: True
+ubuntu2004STIG_stigrule_238197__etc_gdm3_greeter_dconf_defaults_enable_Value: 'true'
+# R-238198 UBTU-20-010003
+ubuntu2004STIG_stigrule_238198_Manage: True
+ubuntu2004STIG_stigrule_238198__etc_gdm3_greeter_dconf_defaults_text_Value: '''You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.\nBy using this IS (which includes any device attached to this IS), you consent to the following conditions:\n-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.\n-At any time, the USG may inspect and seize data stored on this IS.\n-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.\n-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.\n-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.'''
+# R-238200 UBTU-20-010005
+ubuntu2004STIG_stigrule_238200_Manage: True
+ubuntu2004STIG_stigrule_238200_vlock_State: present
+# R-238202 UBTU-20-010007
+ubuntu2004STIG_stigrule_238202_Manage: True
+ubuntu2004STIG_stigrule_238202__etc_login_defs_Line: 'PASS_MIN_DAYS 1'
+# R-238203 UBTU-20-010008
+ubuntu2004STIG_stigrule_238203_Manage: True
+ubuntu2004STIG_stigrule_238203__etc_login_defs_Line: 'PASS_MAX_DAYS 60'
+# R-238207 UBTU-20-010013
+ubuntu2004STIG_stigrule_238207_Manage: True
+ubuntu2004STIG_stigrule_238207__etc_profile_d_99_terminal_tmout_sh_Dest: /etc/profile.d/99-terminal_tmout.sh
+ubuntu2004STIG_stigrule_238207__etc_profile_d_99_terminal_tmout_sh_Content: 'TMOUT=600'
+# R-238209 UBTU-20-010016
+ubuntu2004STIG_stigrule_238209_Manage: True
+ubuntu2004STIG_stigrule_238209__etc_login_defs_Line: 'UMASK 077'
+# R-238212 UBTU-20-010036
+ubuntu2004STIG_stigrule_238212_Manage: True
+ubuntu2004STIG_stigrule_238212_ClientAliveCountMax_Line: ClientAliveCountMax 1
+# R-238213 UBTU-20-010037
+ubuntu2004STIG_stigrule_238213_Manage: True
+ubuntu2004STIG_stigrule_238213_ClientAliveInterval_Line: ClientAliveInterval 600
+# R-238214 UBTU-20-010038
+ubuntu2004STIG_stigrule_238214_Manage: True
+ubuntu2004STIG_stigrule_238214_banner_Line: banner /etc/issue.net
+ubuntu2004STIG_stigrule_238214__etc_issue_net_Dest: /etc/issue.net
+ubuntu2004STIG_stigrule_238214__etc_issue_net_Content: 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
+
+By using this IS (which includes any device attached to this IS), you consent to the following conditions:
+
+-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
+
+-At any time, the USG may inspect and seize data stored on this IS.
+
+-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
+
+-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
+
+-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.
+
+'
+# R-238215 UBTU-20-010042
+ubuntu2004STIG_stigrule_238215_Manage: True
+ubuntu2004STIG_stigrule_238215_ssh_State: present
+ubuntu2004STIG_stigrule_238215_sshd_active_Enabled: yes
+ubuntu2004STIG_stigrule_238215_sshd_start_State: started
+# R-238216 UBTU-20-010043
+ubuntu2004STIG_stigrule_238216_Manage: True
+ubuntu2004STIG_stigrule_238216_MACs_Line: MACs hmac-sha2-512,hmac-sha2-256
+# R-238217 UBTU-20-010044
+ubuntu2004STIG_stigrule_238217_Manage: True
+ubuntu2004STIG_stigrule_238217_Ciphers_Line: Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+# R-238218 UBTU-20-010047
+ubuntu2004STIG_stigrule_238218_Manage: True
+ubuntu2004STIG_stigrule_238218_PermitEmptyPasswords_Line: PermitEmptyPasswords no
+ubuntu2004STIG_stigrule_238218_PermitUserEnvironment_Line: PermitUserEnvironment no
+# R-238219 UBTU-20-010048
+ubuntu2004STIG_stigrule_238219_Manage: True
+ubuntu2004STIG_stigrule_238219_X11Forwarding_Line: X11Forwarding no
+# R-238220 UBTU-20-010049
+ubuntu2004STIG_stigrule_238220_Manage: True
+ubuntu2004STIG_stigrule_238220_X11UseLocalhost_Line: X11UseLocalhost yes
+# R-238221 UBTU-20-010050
+ubuntu2004STIG_stigrule_238221_Manage: True
+ubuntu2004STIG_stigrule_238221__etc_security_pwquality_conf_Line: 'ucredit=-1'
+# R-238222 UBTU-20-010051
+ubuntu2004STIG_stigrule_238222_Manage: True
+ubuntu2004STIG_stigrule_238222__etc_security_pwquality_conf_Line: 'lcredit=-1'
+# R-238223 UBTU-20-010052
+ubuntu2004STIG_stigrule_238223_Manage: True
+ubuntu2004STIG_stigrule_238223__etc_security_pwquality_conf_Line: 'dcredit=-1'
+# R-238224 UBTU-20-010053
+ubuntu2004STIG_stigrule_238224_Manage: True
+ubuntu2004STIG_stigrule_238224__etc_security_pwquality_conf_Line: 'difok=8'
+# R-238225 UBTU-20-010054
+ubuntu2004STIG_stigrule_238225_Manage: True
+ubuntu2004STIG_stigrule_238225__etc_security_pwquality_conf_Line: 'minlen=15'
+# R-238226 UBTU-20-010055
+ubuntu2004STIG_stigrule_238226_Manage: True
+ubuntu2004STIG_stigrule_238226__etc_security_pwquality_conf_Line: 'ocredit=-1'
+# R-238227 UBTU-20-010056
+ubuntu2004STIG_stigrule_238227_Manage: True
+ubuntu2004STIG_stigrule_238227__etc_security_pwquality_conf_Line: 'dictcheck=1'
+# R-238230 UBTU-20-010063
+ubuntu2004STIG_stigrule_238230_Manage: True
+ubuntu2004STIG_stigrule_238230_libpam_pkcs11_State: present
+# R-238231 UBTU-20-010064
+ubuntu2004STIG_stigrule_238231_Manage: True
+ubuntu2004STIG_stigrule_238231_opensc_pkcs11_State: present
+# R-238238 UBTU-20-010100
+ubuntu2004STIG_stigrule_238238_Manage: True
+ubuntu2004STIG_stigrule_238238__etc_audit_rules_d_stig_rules__etc_passwd_Line: '-w /etc/passwd -p wa -k usergroup_modification'
+# R-238239 UBTU-20-010101
+ubuntu2004STIG_stigrule_238239_Manage: True
+ubuntu2004STIG_stigrule_238239__etc_audit_rules_d_stig_rules__etc_group_Line: '-w /etc/group -p wa -k usergroup_modification'
+# R-238240 UBTU-20-010102
+ubuntu2004STIG_stigrule_238240_Manage: True
+ubuntu2004STIG_stigrule_238240__etc_audit_rules_d_stig_rules__etc_shadow_Line: '-w /etc/shadow -p wa -k usergroup_modification'
+# R-238241 UBTU-20-010103
+ubuntu2004STIG_stigrule_238241_Manage: True
+ubuntu2004STIG_stigrule_238241__etc_audit_rules_d_stig_rules__etc_gshadow_Line: '-w /etc/gshadow -p wa -k usergroup_modification'
+# R-238242 UBTU-20-010104
+ubuntu2004STIG_stigrule_238242_Manage: True
+ubuntu2004STIG_stigrule_238242__etc_audit_rules_d_stig_rules__etc_security_opasswd_Line: '-w /etc/security/opasswd -p wa -k usergroup_modification'
+# R-238243 UBTU-20-010117
+# Change root to an account for security personnel.
+ubuntu2004STIG_stigrule_238243_Manage: True
+ubuntu2004STIG_stigrule_238243__etc_audit_auditd_conf_Line: 'action_mail_acct = root'
+# R-238244 UBTU-20-010118
+ubuntu2004STIG_stigrule_238244_Manage: True
+ubuntu2004STIG_stigrule_238244__etc_audit_auditd_conf_Line: 'disk_full_action = HALT'
+# R-238252 UBTU-20-010136
+ubuntu2004STIG_stigrule_238252_Manage: True
+ubuntu2004STIG_stigrule_238252__etc_audit_rules_d_stig_rules__bin_su_Line: '-a always,exit -F path=/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change'
+# R-238253 UBTU-20-010137
+ubuntu2004STIG_stigrule_238253_Manage: True
+ubuntu2004STIG_stigrule_238253__etc_audit_rules_d_stig_rules__usr_bin_chfn_Line: '-a always,exit -F path=/usr/bin/chfn -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-chfn'
+# R-238254 UBTU-20-010138
+ubuntu2004STIG_stigrule_238254_Manage: True
+ubuntu2004STIG_stigrule_238254__etc_audit_rules_d_stig_rules__usr_bin_mount_Line: '-a always,exit -F path=/usr/bin/mount -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-mount'
+# R-238255 UBTU-20-010139
+ubuntu2004STIG_stigrule_238255_Manage: True
+ubuntu2004STIG_stigrule_238255__etc_audit_rules_d_stig_rules__usr_bin_umount_Line: '-a always,exit -F path=/usr/bin/umount -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-umount'
+# R-238256 UBTU-20-010140
+ubuntu2004STIG_stigrule_238256_Manage: True
+ubuntu2004STIG_stigrule_238256__etc_audit_rules_d_stig_rules__usr_bin_ssh_agent_Line: '-a always,exit -F path=/usr/bin/ssh-agent -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh'
+# R-238257 UBTU-20-010141
+ubuntu2004STIG_stigrule_238257_Manage: True
+ubuntu2004STIG_stigrule_238257__etc_audit_rules_d_stig_rules__usr_lib_openssh_ssh_keysign_Line: '-a always,exit -F path=/usr/lib/openssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh'
+# R-238258 UBTU-20-010142
+ubuntu2004STIG_stigrule_238258_Manage: True
+ubuntu2004STIG_stigrule_238258__etc_audit_rules_d_stig_rules_b32_setxattr_fsetxattr_lsetxattr_removexattr_fremovexattr_lremovexattr_1_Line: '-a always,exit -F arch=b32 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid>=1000 -F auid!=-1 -k perm_mod'
+ubuntu2004STIG_stigrule_238258__etc_audit_rules_d_stig_rules_b32_setxattr_fsetxattr_lsetxattr_removexattr_fremovexattr_lremovexattr_2_Line: '-a always,exit -F arch=b32 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid=0 -k perm_mod'
+ubuntu2004STIG_stigrule_238258__etc_audit_rules_d_stig_rules_b64_setxattr_fsetxattr_lsetxattr_removexattr_fremovexattr_lremovexattr_1_Line: '-a always,exit -F arch=b64 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid>=1000 -F auid!=-1 -k perm_mod'
+ubuntu2004STIG_stigrule_238258__etc_audit_rules_d_stig_rules_b64_setxattr_fsetxattr_lsetxattr_removexattr_fremovexattr_lremovexattr_2_Line: '-a always,exit -F arch=b64 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid=0 -k perm_mod'
+# R-238264 UBTU-20-010148
+ubuntu2004STIG_stigrule_238264_Manage: True
+ubuntu2004STIG_stigrule_238264__etc_audit_rules_d_stig_rules_b32_chown_fchown_fchownat_lchown_Line: '-a always,exit -F arch=b32 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=-1 -k perm_chng'
+ubuntu2004STIG_stigrule_238264__etc_audit_rules_d_stig_rules_b64_chown_fchown_fchownat_lchown_Line: '-a always,exit -F arch=b64 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=-1 -k perm_chng'
+# R-238268 UBTU-20-010152
+ubuntu2004STIG_stigrule_238268_Manage: True
+ubuntu2004STIG_stigrule_238268__etc_audit_rules_d_stig_rules_b32_chmod_fchmod_fchmodat_Line: '-a always,exit -F arch=b32 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+ubuntu2004STIG_stigrule_238268__etc_audit_rules_d_stig_rules_b64_chmod_fchmod_fchmodat_Line: '-a always,exit -F arch=b64 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-238271 UBTU-20-010155
+ubuntu2004STIG_stigrule_238271_Manage: True
+ubuntu2004STIG_stigrule_238271__etc_audit_rules_d_stig_rules_b32_creat_open_openat_open_by_handle_at_truncate_ftruncate_EPERM_Line: '-a always,exit -F arch=b32 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k perm_access'
+ubuntu2004STIG_stigrule_238271__etc_audit_rules_d_stig_rules_b32_creat_open_openat_open_by_handle_at_truncate_ftruncate_EACCES_Line: '-a always,exit -F arch=b32 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k perm_access'
+ubuntu2004STIG_stigrule_238271__etc_audit_rules_d_stig_rules_b64_creat_open_openat_open_by_handle_at_truncate_ftruncat_EPERM_Line: '-a always,exit -F arch=b64 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k perm_access'
+ubuntu2004STIG_stigrule_238271__etc_audit_rules_d_stig_rules_b64_creat_open_openat_open_by_handle_at_truncate_ftruncat_EACCES_Line: '-a always,exit -F arch=b64 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k perm_access'
+# R-238277 UBTU-20-010161
+ubuntu2004STIG_stigrule_238277_Manage: True
+ubuntu2004STIG_stigrule_238277__etc_audit_rules_d_stig_rules__usr_bin_sudo_Line: '-a always,exit -F path=/usr/bin/sudo -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-238278 UBTU-20-010162
+ubuntu2004STIG_stigrule_238278_Manage: True
+ubuntu2004STIG_stigrule_238278__etc_audit_rules_d_stig_rules__usr_bin_sudoedit_Line: '-a always,exit -F path=/usr/bin/sudoedit -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-238279 UBTU-20-010163
+ubuntu2004STIG_stigrule_238279_Manage: True
+ubuntu2004STIG_stigrule_238279__etc_audit_rules_d_stig_rules__usr_bin_chsh_Line: '-a always,exit -F path=/usr/bin/chsh -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-238280 UBTU-20-010164
+ubuntu2004STIG_stigrule_238280_Manage: True
+ubuntu2004STIG_stigrule_238280__etc_audit_rules_d_stig_rules__usr_bin_newgrp_Line: '-a always,exit -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=4294967295 -k priv_cmd'
+# R-238281 UBTU-20-010165
+ubuntu2004STIG_stigrule_238281_Manage: True
+ubuntu2004STIG_stigrule_238281__etc_audit_rules_d_stig_rules__usr_bin_chcon_Line: '-a always,exit -F path=/usr/bin/chcon -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-238282 UBTU-20-010166
+ubuntu2004STIG_stigrule_238282_Manage: True
+ubuntu2004STIG_stigrule_238282__etc_audit_rules_d_stig_rules__sbin_apparmor_parser_Line: '-a always,exit -F path=/sbin/apparmor_parser -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-238283 UBTU-20-010167
+ubuntu2004STIG_stigrule_238283_Manage: True
+ubuntu2004STIG_stigrule_238283__etc_audit_rules_d_stig_rules__usr_bin_setfacl_Line: '-a always,exit -F path=/usr/bin/setfacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-238284 UBTU-20-010168
+ubuntu2004STIG_stigrule_238284_Manage: True
+ubuntu2004STIG_stigrule_238284__etc_audit_rules_d_stig_rules__usr_bin_chacl_Line: '-a always,exit -F path=/usr/bin/chacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng'
+# R-238285 UBTU-20-010169
+ubuntu2004STIG_stigrule_238285_Manage: True
+ubuntu2004STIG_stigrule_238285__etc_audit_rules_d_stig_rules_tallylog_Line: '-w /var/log/tallylog -p wa -k logins'
+# R-238286 UBTU-20-010170
+ubuntu2004STIG_stigrule_238286_Manage: True
+ubuntu2004STIG_stigrule_238286__etc_audit_rules_d_stig_rules_faillog_Line: '-w /var/log/faillog -p wa -k logins'
+# R-238287 UBTU-20-010171
+ubuntu2004STIG_stigrule_238287_Manage: True
+ubuntu2004STIG_stigrule_238287__etc_audit_rules_d_stig_rules_lastlog_Line: '-w /var/log/lastlog -p wa -k logins'
+# R-238288 UBTU-20-010172
+ubuntu2004STIG_stigrule_238288_Manage: True
+ubuntu2004STIG_stigrule_238288__etc_audit_rules_d_stig_rules__usr_bin_passwd_Line: '-a always,exit -F path=/usr/bin/passwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd'
+# R-238289 UBTU-20-010173
+ubuntu2004STIG_stigrule_238289_Manage: True
+ubuntu2004STIG_stigrule_238289__etc_audit_rules_d_stig_rules__sbin_unix_update_Line: '-a always,exit -F path=/sbin/unix_update -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-unix-update'
+# R-238290 UBTU-20-010174
+ubuntu2004STIG_stigrule_238290_Manage: True
+ubuntu2004STIG_stigrule_238290__etc_audit_rules_d_stig_rules__usr_bin_gpasswd_Line: '-a always,exit -F path=/usr/bin/gpasswd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-gpasswd'
+# R-238291 UBTU-20-010175
+ubuntu2004STIG_stigrule_238291_Manage: True
+ubuntu2004STIG_stigrule_238291__etc_audit_rules_d_stig_rules__usr_bin_chage_Line: '-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-chage'
+# R-238292 UBTU-20-010176
+ubuntu2004STIG_stigrule_238292_Manage: True
+ubuntu2004STIG_stigrule_238292__etc_audit_rules_d_stig_rules__usr_bin_usermod_Line: '-a always,exit -F path=/usr/sbin/usermod -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-usermod'
+# R-238293 UBTU-20-010177
+ubuntu2004STIG_stigrule_238293_Manage: True
+ubuntu2004STIG_stigrule_238293__etc_audit_rules_d_stig_rules__usr_bin_crontab_Line: '-a always,exit -F path=/usr/bin/crontab -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-crontab'
+# R-238294 UBTU-20-010178
+ubuntu2004STIG_stigrule_238294_Manage: True
+ubuntu2004STIG_stigrule_238294__etc_audit_rules_d_stig_rules__usr_sbin_pam_timestamp_check_Line: '-a always,exit -F path=/usr/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-pam_timestamp_check'
+# R-238295 UBTU-20-010179
+ubuntu2004STIG_stigrule_238295_Manage: True
+ubuntu2004STIG_stigrule_238295__etc_audit_rules_d_stig_rules_b32_init_module_finit_module_Line: '-a always,exit -F arch=b32 -S init_module,finit_module -F auid>=1000 -F auid!=-1 -k module_chng'
+ubuntu2004STIG_stigrule_238295__etc_audit_rules_d_stig_rules_b64_init_module_finit_module_Line: '-a always,exit -F arch=b64 -S init_module,finit_module -F auid>=1000 -F auid!=-1 -k module_chng'
+# R-238297 UBTU-20-010181
+ubuntu2004STIG_stigrule_238297_Manage: True
+ubuntu2004STIG_stigrule_238297__etc_audit_rules_d_stig_rules_delete_module_b32_Line: '-a always,exit -F arch=b32 -S delete_module -F auid>=1000 -F auid!=4294967295 -k module_chng'
+ubuntu2004STIG_stigrule_238297__etc_audit_rules_d_stig_rules_delete_module_b64_Line: '-a always,exit -F arch=b64 -S delete_module -F auid>=1000 -F auid!=4294967295 -k module_chng'
+# R-238298 UBTU-20-010182
+ubuntu2004STIG_stigrule_238298_Manage: True
+ubuntu2004STIG_stigrule_238298_auditd_State: present
+ubuntu2004STIG_stigrule_238298_auditd_enable_Enabled: yes
+# R-238304 UBTU-20-010211
+ubuntu2004STIG_stigrule_238304_Manage: True
+ubuntu2004STIG_stigrule_238304__etc_audit_rules_d_stig_rules_execve_b64_euid_Line: '-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -F key=execpriv'
+ubuntu2004STIG_stigrule_238304__etc_audit_rules_d_stig_rules_execve_b64_egid_Line: '-a always,exit -F arch=b64 -S execve -C gid!=egid -F egid=0 -F key=execpriv'
+ubuntu2004STIG_stigrule_238304__etc_audit_rules_d_stig_rules_execve_b32_euid_Line: '-a always,exit -F arch=b32 -S execve -C uid!=euid -F euid=0 -F key=execpriv'
+ubuntu2004STIG_stigrule_238304__etc_audit_rules_d_stig_rules_execve_b32_egid_Line: '-a always,exit -F arch=b32 -S execve -C gid!=egid -F egid=0 -F key=execpriv'
+# R-238309 UBTU-20-010244
+ubuntu2004STIG_stigrule_238309_Manage: True
+ubuntu2004STIG_stigrule_238309__etc_audit_rules_d_stig_rules_sudo_log_Line: '-w /var/log/sudo.log -p wa -k actions'
+# R-238310 UBTU-20-010267
+ubuntu2004STIG_stigrule_238310_Manage: True
+ubuntu2004STIG_stigrule_238310__etc_audit_rules_d_stig_rules_b64_unlink_unlinkat_rename_renameat_rmdir_Line: '-a always,exit -F arch=b64 -S unlink,unlinkat,rename,renameat,rmdir -F auid>=1000 -F auid!=-1 -k delete'
+ubuntu2004STIG_stigrule_238310__etc_audit_rules_d_stig_rules_b32_unlink_unlinkat_rename_renameat_rmdir_Line: '-a always,exit -F arch=b32 -S unlink,unlinkat,rename,renameat,rmdir -F auid>=1000 -F auid!=-1 -k delete'
+# R-238315 UBTU-20-010277
+ubuntu2004STIG_stigrule_238315_Manage: True
+ubuntu2004STIG_stigrule_238315__etc_audit_rules_d_stig_rules__var_log_wtmp_Line: '-w /var/log/wtmp -p wa -k logins'
+# R-238316 UBTU-20-010278
+ubuntu2004STIG_stigrule_238316_Manage: True
+ubuntu2004STIG_stigrule_238316__etc_audit_rules_d_stig_rules__var_run_utmp_Line: '-w /var/run/utmp -p wa -k logins'
+# R-238317 UBTU-20-010279
+ubuntu2004STIG_stigrule_238317_Manage: True
+ubuntu2004STIG_stigrule_238317__etc_audit_rules_d_stig_rules__var_log_btmp_Line: '-w /var/log/btmp -p wa -k logins'
+# R-238318 UBTU-20-010296
+ubuntu2004STIG_stigrule_238318_Manage: True
+ubuntu2004STIG_stigrule_238318__etc_audit_rules_d_stig_rules__sbin_modprobe_Line: '-w /sbin/modprobe -p x -k modules'
+# R-238319 UBTU-20-010297
+ubuntu2004STIG_stigrule_238319_Manage: True
+ubuntu2004STIG_stigrule_238319__etc_audit_rules_d_stig_rules__bin_kmod_Line: '-w /bin/kmod -p x -k modules'
+# R-238320 UBTU-20-010298
+ubuntu2004STIG_stigrule_238320_Manage: True
+ubuntu2004STIG_stigrule_238320__etc_audit_rules_d_stig_rules__bin_fdisk_Line: '-w /sbin/fdisk -p x -k fdisk'
+# R-238323 UBTU-20-010400
+ubuntu2004STIG_stigrule_238323_Manage: True
+ubuntu2004STIG_stigrule_238323__etc_security_limits_conf_Line: '* hard maxlogins 10'
+# R-238325 UBTU-20-010404
+ubuntu2004STIG_stigrule_238325_Manage: True
+ubuntu2004STIG_stigrule_238325__etc_login_defs_Line: 'ENCRYPT_METHOD SHA512'
+# R-238326 UBTU-20-010405
+ubuntu2004STIG_stigrule_238326_Manage: True
+ubuntu2004STIG_stigrule_238326_telnetd_State: absent
+# R-238327 UBTU-20-010406
+ubuntu2004STIG_stigrule_238327_Manage: True
+ubuntu2004STIG_stigrule_238327_rsh_server_State: absent
+# R-238333 UBTU-20-010412
+ubuntu2004STIG_stigrule_238333_Manage: True
+ubuntu2004STIG_stigrule_238333_net_ipv4_tcp_syncookies_Value: 1
+ubuntu2004STIG_stigrule_238333__etc_sysctl_conf_Line: 'net.ipv4.tcp_syncookies = 1'
+# R-238334 UBTU-20-010413
+ubuntu2004STIG_stigrule_238334_Manage: True
+ubuntu2004STIG_stigrule_238334_kdump_disable_Enabled: no
+# R-238336 UBTU-20-010415
+# Disabled due to not being a standard package
+ubuntu2004STIG_stigrule_238336_Manage: False
+ubuntu2004STIG_stigrule_238336_mfetp_State: present
+# R-238353 UBTU-20-010432
+ubuntu2004STIG_stigrule_238353_Manage: True
+ubuntu2004STIG_stigrule_238353_rsyslog_State: present
+ubuntu2004STIG_stigrule_238353_rsyslog_enable_Enabled: yes
+# R-238354 UBTU-20-010433
+ubuntu2004STIG_stigrule_238354_Manage: True
+ubuntu2004STIG_stigrule_238354_ufw_State: present
+# R-238355 UBTU-20-010434
+# A duplicate of 238374
+# duplicate of 238374
+# R-238359 UBTU-20-010438
+ubuntu2004STIG_stigrule_238359_Manage: True
+ubuntu2004STIG_stigrule_238359__etc_apt_apt_conf_d_01_vendor_Ubuntu_Line: 'APT::Get::AllowUnauthenticated "false";'
+# R-238360 UBTU-20-010439
+ubuntu2004STIG_stigrule_238360_Manage: True
+ubuntu2004STIG_stigrule_238360_apparmor_State: present
+ubuntu2004STIG_stigrule_238360_apparmor_enable_Enabled: yes
+ubuntu2004STIG_stigrule_238360_apparmor_start_State: started
+ubuntu2004STIG_stigrule_238360_aide_State: present
+# R-238370 UBTU-20-010449
+ubuntu2004STIG_stigrule_238370_Manage: True
+ubuntu2004STIG_stigrule_238370__etc_apt_apt_conf_d_50unattended_upgrades_Remove_Unused_Dependencies_Line: 'Unattended-Upgrade::Remove-Unused-Dependencies "true";'
+ubuntu2004STIG_stigrule_238370__etc_apt_apt_conf_d_50unattended_upgrades_Remove_Unused_Kernel_Packages_Line: 'Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";'
+# R-238374 UBTU-20-010454
+ubuntu2004STIG_stigrule_238374_Manage: True
+ubuntu2004STIG_stigrule_238374_ufw_active_Enabled: yes
+ubuntu2004STIG_stigrule_238374_ufw_start_State: started

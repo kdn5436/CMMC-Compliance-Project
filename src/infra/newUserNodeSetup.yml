@@ -1,0 +1,89 @@
+---
+# tasks file for a new user node setup
+# Author: Chris Fitzgerald
+# Email: cf2995@rit.edu
+#
+# This playbook upgrades a new installation, installs necessary packages, and
+# enables firewalld. The tasks are done conditionally depending on the Linux
+# distribution family. It does not support the ArchLinux family of distros.
+# This is because tehy are not stable enough for a CMMC compliant business
+# setting. It also dies not support Windows.  A separate script will be used to
+# configure Windows nodes if necessary. To keep the script more simple, all
+# installations are standardized on firewalld. This also allows for more ease of
+# administration: only one type of firewall needs to be configured.
+# 
+# LOCALHOST USAGE:
+# sudo ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 newUserNodeSetup.yml
+#
+# REMOTE USAGE:
+# 
+# ssh keyfile based:
+# ansible-playbook -s -u USERNAME -c ssh newUserNodeSetup.yml
+#
+#ssh password based:
+#ansible-playbook -s -u USERNAME -c ssh -K newUserNodeSetup.yml
+
+- hosts: localhost
+  connection: local
+  become: yes
+  vars:
+    # Since packages are named differently between RedHat and Debian families,
+    # two variables are named conataining all of the relevant packages.
+    rhpackages: [htop,clamav,clamav-freshclam,texstudio,libreoffice,firewalld,
+      firewall-config,vim,vim-syntastic,vim-jedi,vim-ale,vim-fugitive,vim-latex,
+      git-all,keepassxc,thunderbird]
+    debpackages: [htopclamav,clamav-freshclam,libreoffice,firewalld,
+      firewall-config,vim,vim-ale,vim-fugitive,vim-latexsuite,vim-python-jedi,
+      vim-syntastic,keepassxc,git-all,flatpak,thunderbird]
+
+  tasks:
+    # update all previously installed packages first.
+    # if RedHat family, use dnf
+    # else if Debian family, use apt
+    - name: Upgrade all packages in RedHat family # Fedora, CentOS, RedHat, etc.
+      when: ansible_facts['os_family'] == "RedHat"
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: Upgrade all packages in Debian family # Debian, Ubuntu, Pop!_OS
+      when: ansible_facts['os_family'] == "Debian"
+      apt:
+        name: "*"
+        state: latest
+
+    - name: Install the wanted utilities in RedHat family
+      when: ansible_facts['os_family'] == "RedHat"
+      dnf:
+        name: '{{rhpackages}}'
+        state: present
+    
+    - name: Install the wanted utilities in the Debian family
+      when: ansible_facts['os_family'] == "Debian"
+      apt:
+        name: '{{debpackages}}'
+        state: present
+
+    - name: Remove ufw if it exists on Debian family
+      when: ansible_facts['os_family'] == "Debian"
+      apt:
+        name: ufw
+        state: absent
+
+    - name: Start and enable firewalld
+      systemd:
+        name: firewalld
+        state: started
+        enabled: true
+
+    - name: Set ICMP inversion
+      firewalld:
+        icmp_block_inversion: enable
+        permanent: true
+        state: enabled
+
+    - name: Start and enable freshclam
+      systemd:
+        name: clamav-freshclam
+        state: started
+        enabled: true
