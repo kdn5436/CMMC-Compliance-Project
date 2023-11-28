@@ -15,77 +15,74 @@
         security_group: default
         protocol: icmp
         remote_ip_prefix: 0.0.0.0/0
-    - name: create guest network
+    - name: create tonga network
       openstack.cloud.network:
         state: present
-        name: guest_net
+        name: tonga_net
         external: false
         port_security_enabled: false
     - name: create guest subnet
       openstack.cloud.subnet:
         state: present
-        network_name: guest_net
+        network_name: tonga_net
         name: guest_net
         cidr: 192.168.0.0/24
         gateway_ip: 192.168.0.1
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
-    - name: create pci network
-      openstack.cloud.network:
-        state: present
-        name: pci_net
-        external: false
-        port_security_enabled: false
-    - name: create pci subnet
-      openstack.cloud.subnet:
-        state: present
-        network_name: pci_net
-        name: pci_net
-        cidr: 192.168.3.0/24
-        gateway_ip: 192.168.3.1
-        dns_nameservers:
-           - 8.8.8.7
-           - 8.8.8.8
-    - name: create workstation network
-      openstack.cloud.network:
-        state: present
-        name: workstation_net
-        external: false
-        port_security_enabled: false
+      register: guest_subnet_output
     - name: create workstation subnet
       openstack.cloud.subnet:
         state: present
-        network_name: workstation_net
+        network_name: tonga_net
         name: workstation_net
         cidr: 192.168.1.0/24
         gateway_ip: 192.168.1.1
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
-    - name: create office network
-      openstack.cloud.network:
-        state: present
-        name: office_net
-        external: false
-        port_security_enabled: false
+      register: workstation_subnet_output
     - name: create office subnet
       openstack.cloud.subnet:
         state: present
-        network_name: office_net
+        network_name: tonga_net
         name: office_net
         cidr: 192.168.2.0/24
         gateway_ip: 192.168.2.1
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
+      register: office_subnet_output
+    - name: create port with fixed ip on guest
+      openstack.cloud.port:
+        state: present
+        name: guest1
+        network: tonga_net
+        fixed_ips: 
+          - subnet_id: "{{ guest_subnet_output.id }}"
+    - name: create port with fixed ip on workstation
+      openstack.cloud.port:
+        state: present
+        name: workstation1
+        network: tonga_net
+        fixed_ips: 
+          - subnet_id: "{{ workstation_subnet_output.id }}"
+    - name: create port with fixed ip on office
+      openstack.cloud.port:
+        state: present
+        name: office1
+        network: tonga_net
+        fixed_ips: 
+          - subnet_id: "{{ office_subnet_output.id }}"
     - name: Create one guest host
       openstack.cloud.server:
         state: present
         name: guest_laptop
         image: 508356e0-c982-4341-abb6-b5f9225f3bf5
         flavor: large
-        network: guest_net
+        nics: 
+          - port-name: guest1
         auto_ip: false
         wait: true
     - name: Create one workstation host
@@ -94,16 +91,8 @@
         name: workstation_machine1
         image: 508356e0-c982-4341-abb6-b5f9225f3bf5
         flavor: large
-        network: workstation_net
-        auto_ip: false
-        wait: true
-    - name: Create one pci host
-      openstack.cloud.server:
-        state: present
-        name: pci_machine1
-        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
-        flavor: large
-        network: pci_net
+        nics: 
+          - port-name: workstation1
         auto_ip: false
         wait: true
     - name: Create an office host
@@ -112,7 +101,8 @@
         name: jim_desktop
         image: 508356e0-c982-4341-abb6-b5f9225f3bf5
         flavor: large
-        network: office_net
+        nics: 
+          - port-name: office1
         auto_ip: false
         wait: true
     - name: Create a router connecting the networks
@@ -121,12 +111,10 @@
         name: router2
         network: MAIN-NAT
         interfaces:
-          - net: office_net
+          - net: tonga_net
             subnet: office_net
-          - net: workstation_net
+          - net: tonga_net
             subnet: workstation_net
-          - net: guest_net
+          - net: tonga_net
             subnet: guest_net
-          - net: pci_net
-            subnet: pci_net
 

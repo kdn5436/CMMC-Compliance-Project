@@ -1,0 +1,30 @@
+- hosts: localhost
+  tasks:
+    - name: Delete guest host
+      openstack.cloud.server:
+        state: absent
+        name: guest_laptop
+    - name: Delete workstation host
+      openstack.cloud.server:
+        state: absent
+        name: workstation_machine1
+    - name: Delete office host
+      openstack.cloud.server:
+        state: absent
+        name: jim_desktop
+    - name: Remove Tonga Router
+      openstack.cloud.router:
+        state: absent
+        name: router2
+    - name: create guest network
+      openstack.cloud.network:
+        state: absent
+        name: guest_net
+    - name: create guest network
+      openstack.cloud.network:
+        state: absent
+        name: workstation_net
+    - name: create guest network
+      openstack.cloud.network:
+        state: absent
+        name: office_net
