@@ -1,0 +1,3 @@
+openpyxl
+oscal-pydantic
+pydantic==1.1
