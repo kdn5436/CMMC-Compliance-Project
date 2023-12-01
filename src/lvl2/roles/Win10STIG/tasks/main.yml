@@ -1,0 +1,75 @@
+---
+
+- name: Display Banner
+  ansible.builtin.debug:
+      msg: "{{ lockdown_banner.split('\n') }}"
+  tags:
+      - always
+
+- name: Gather distribution info
+  ansible.builtin.setup:
+      gather_subset: distribution,!all,!min
+  when:
+      - ansible_distribution is not defined
+  tags:
+      - always
+
+- name: Check OS version and family
+  ansible.builtin.assert:
+      that:
+          - ansible_os_family == 'Windows'
+          - ansible_distribution | regex_search('(Microsoft Windows 10)')
+      success_msg: "{{ ansible_distribution }} {{ ansible_distribution_major_version }} is the detected operating system."
+      fail_msg: "This role can only be run against Windows 10 Editions. {{ ansible_distribution }} {{ ansible_distribution_major_version }} is not supported."
+  tags:
+      - always
+
+- name: Get Disk Facts
+  community.windows.win_disk_facts:
+  when:
+      - wn10_00_000050 or
+        wn10_00_000130
+
+- name: Check ansible version
+  ansible.builtin.assert:
+      that: ansible_version.full is version_compare(win10stig_min_ansible_version, '>=')
+      msg: You must use Ansible {{ win10stig_min_ansible_version }} or greater
+  tags:
+      - always
+
+- name: Include the preliminary tasks
+  ansible.builtin.include_tasks: prelim.yml
+  tags:
+      - prelim_tasks
+
+- name: Execute the category 1 (highest severity) tasks
+  ansible.builtin.import_tasks: cat1.yml
+  when: win10stig_cat1_patch | bool
+  tags:
+      - cat1
+      - high
+
+- name: Execute the category 2 (medium severity) tasks
+  ansible.builtin.import_tasks: cat2.yml
+  when: win10stig_cat2_patch | bool
+  tags:
+      - cat2
+      - medium
+
+- name: Execute the category 3 (lowest severity) tasks
+  ansible.builtin.import_tasks: cat3.yml
+  when: win10stig_cat3_patch | bool
+  tags:
+      - cat3
+      - low
+
+- name: Reboot system after running
+  ansible.windows.win_reboot:
+  when: win10stig_always_reboot
+
+- name: If Warnings found Output count and control IDs affected
+  ansible.builtin.debug:
+      msg:
+          - "You have {{ warn_count }} Warning(s) that require investigation(s). Their ID’s are listed below:"
+          - "{{ warn_control_list }}"
+  when: warn_count != 0

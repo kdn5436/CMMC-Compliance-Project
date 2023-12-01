@@ -1,0 +1,9 @@
+---
+
+- hosts: all  # noqa: name[play]
+
+  vars:
+      is_container: false
+
+  roles:
+      - role: "{{ playbook_dir }}"
