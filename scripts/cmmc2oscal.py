@@ -13,7 +13,7 @@ CONTROL_APPLICATIONS = (
     'cloud'
 )
 
-def extract_control_from_cell(cell) -> Control | None:
+def extract_control_from_cell(cell, ctrl_class=None) -> Control | None:
     if cell.value == None:
         return None
     v1ctrlid, v2ctrlid, ctrltitle, ctrldesc = cell.value.split('\n')[:4]
@@ -35,7 +35,7 @@ def extract_control_from_cell(cell) -> Control | None:
     ctrl = Control(
         v2ctrlid,
         ctrltitle,
-        'L1',
+        ctrl_class,
     )
     ctrl.props = [descprop, v1idprop]
 
@@ -119,7 +119,7 @@ def main():
         # Iterate over the rows in the sheet
         for row in sheet.iter_rows(min_row=4, max_col=1):
             for cell in row:
-                ctrl = extract_control_from_cell(cell)
+                ctrl = extract_control_from_cell(cell, "L1")
                 if ctrl != None:
                     l1_group.controls.append(ctrl)
                     l2_group.controls.append(ctrl)
@@ -127,7 +127,7 @@ def main():
 
         for row in sheet.iter_rows(min_row=4, min_col=2, max_col=2):
             for cell in row:
-                ctrl = extract_control_from_cell(cell)
+                ctrl = extract_control_from_cell(cell, "L2")
                 
                 if ctrl != None:
                     l2_group.controls.append(ctrl)
@@ -135,7 +135,7 @@ def main():
         
         for row in sheet.iter_rows(min_row=4, min_col=3, max_col=3):
             for cell in row:
-                ctrl = extract_control_from_cell(cell)
+                ctrl = extract_control_from_cell(cell, "L3")
                 
                 if ctrl != None:
                     l3_group.controls.append(ctrl)
