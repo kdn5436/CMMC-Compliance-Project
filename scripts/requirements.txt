@@ -1,3 +1,4 @@
 openpyxl
-oscal-pydantic
-pydantic==1.1
+openai
+dotenv
+pyyaml
