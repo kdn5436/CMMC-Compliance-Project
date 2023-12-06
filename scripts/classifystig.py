@@ -1,4 +1,3 @@
-from io import TextIOWrapper
 import openai
 from parse_cmmc_catalog import get_control_llm_system_message
 import os, dotenv
@@ -9,7 +8,7 @@ dotenv.load_dotenv()
 L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../ref/cmmc_v2_L3.json')
 CLIENT = openai.Client(api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID"))
 
-def classify_controls_in_task_win10(task_filepath: TextIOWrapper):
+def classify_controls_in_task_win10(task_filepath: str):
     sys_msg_content = f"""
     You are a component in a program that maps an ansible security implementation to a relevant security control in compliance with the CMMC Model V2 Security controls.
     You will be given an ansible task that implements a security control, and you will be respond with the ID of the security control that best represents the ansible task.
