@@ -6,8 +6,16 @@ import yaml
 
 dotenv.load_dotenv()
 
-L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../ref/cmmc_v2_L3.json')
-CLIENT = openai.Client(api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID"))
+L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../../ref/json/cmmc_v2_L3.json')
+# CLIENT = openai.Client(api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID"))
+def win10_task_relevant_info(task: dict, is_subtask: bool = False):
+    name = task["name"].split(" | ")[3]
+    if is_subtask:
+        name = " ".join(task["name"].split(" | ")[3:5])
+    task_type = task["name"].split(" | ")[2]
+    implementation_key = [key for key in task.keys() if key.startswith("ansible") and not "debug" in key]
+    implementation = yaml.dump({key:task[key] for key in implementation_key})
+    return name, task_type, implementation
 
 def classify_controls_in_task_win10(task_filepath: TextIOWrapper):
     sys_msg_content = f"""
@@ -28,17 +36,22 @@ def classify_controls_in_task_win10(task_filepath: TextIOWrapper):
     classifications = []
     used_tokens = 0
     with open(task_filepath, "r") as f:
-        tasks = yaml.load(f.read())
-
+        tasks = yaml.load(f.read(), Loader=yaml.FullLoader)
         for task in tasks:
             #TODO PATCH tasks have changing actions, and thus can be classified based on the action (ansible.windows.win_regedit, ansible.windows.win_shell, etc...)
             # AUDIT tasks can either have a verification action, or a when conditional based on a previous action in the block
             # tasks are nested if they have a block key, which contains a list of more tasks
-
-            task_name = task["name"].split(" ")[3]
             if "block" in task.keys():
-                 task_name = "".join(task["name"][3:4]) 
-            task_content = ""
+                 for subtask in task["block"]:
+                    name, task_type, implementation = win10_task_relevant_info(subtask, is_subtask=True)
+                    print(name)
+                    print("-----")
+                    print(task_type)
+                    print("-----")
+                    print(implementation)
+            else:
+                name, task_type, implementation = win10_task_relevant_info(subtask)
+
 
             task_msg = [{"role": "user", "content": task_content}]
 
@@ -54,7 +67,7 @@ def classify_controls_in_task_win10(task_filepath: TextIOWrapper):
     return classifications, used_tokens
 def main():
     
-        classifications = classify_controls_in_task_win10("../src/lvl2/roles/Win10STIG/tasks/cat3.yml")
+        classifications = classify_controls_in_task_win10("../stiglevel2/roles/Win10STIG/tasks/cat3.yml")
 
 if __name__ == '__main__':
     main()
