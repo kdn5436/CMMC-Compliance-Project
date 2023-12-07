@@ -1,0 +1,58 @@
+- name: |
+    "MEDIUM | WN10-AU-000005 | PATCH | The system must be configured to audit Account Logon - Credential Validation failures."
+    "MEDIUM | WN10-AU-000010 | PATCH | The system must be configured to audit Account Logon - Credential Validation successes."
+  community.windows.win_audit_policy_system:
+      subcategory: Credential Validation
+      audit_type: "{{ (wn10_AU_000005 and not wn10_AU_000010) | ternary ('failure', '') }}{{ (wn10_AU_000010 and not wn10_AU_000005) | ternary ('success', '') }}{{ (wn10_AU_000005 and wn10_AU_000010) | ternary ('success, failure', '') }}"
+  when:
+      - wn10_AU_000005 or
+        wn10_AU_000010
+  tags:
+      - WN10-AU-000005
+      - WN10-AU-000010
+      - CAT2
+      - CCI-000172
+      - SRG-OS-000470-GPOS-00214
+      - SV-220748r569187_rule
+      - SV-220749r569187_rule
+      - V-220748
+      - V-220749
+
+- name: "HIGH | WN10-00-000145 | PATCH | Data Execution Prevention (DEP) must be configured to at least OptOut."
+  block:
+      - name: "HIGH | WN10-00-000145 | AUDIT | Data Execution Prevention (DEP) must be configured to at least OptOut. | Status check for idempotency."
+        ansible.windows.win_shell: BCDEdit /enum "{current}"
+        changed_when: false
+        failed_when: false
+        register: win10_00_000145_dep_setting_search
+
+      - name: "HIGH | WN10-00-000145 | PATCH | Data Execution Prevention (DEP) must be configured to at least OptOut. | Make change to match {{ wnstig_dep_value }}."
+        ansible.windows.win_shell: BCDEdit /set "{current}" nx {{ wn10stig_dep_value }}
+        when: "wn10stig_dep_value not in win10_00_000145_dep_setting_search.stdout | regex_search('nx\\s.*') | trim | regex_replace('nx','') | trim"
+  when:
+      - wn10_00_000145
+  tags:
+      - WN10-00-000145
+      - CAT1
+      - CCI-002824
+      - SRG-OS-000433-GPOS-00192
+      - SV-220726r569187_rule
+      - V-220726
+
+- name: "HIGH | WN10-CC-000345 | PATCH | The Windows Remote Management (WinRM) service must not use Basic authentication."
+  ansible.windows.win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service
+      value: AllowBasic
+      state: present
+      data: 0
+      datatype: dword
+  when:
+      - wn10_CC_000345
+      - not win_skip_for_test
+  tags:
+      - WN10-CC-000345
+      - CAT1
+      - CCI-000877
+      - SRG-OS-000125-GPOS-00065
+      - SV-220865r654974_rule
+      - V-220865
