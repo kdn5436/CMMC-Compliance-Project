@@ -1,4 +1,4 @@
-- hosts: ubuntu
+- hosts: localhost
   gather_facts: no
   roles:
     - ubuntu2004STIG
