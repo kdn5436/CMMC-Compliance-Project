@@ -79,32 +79,58 @@
       openstack.cloud.server:
         state: present
         name: guest_laptop
-        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
         flavor: large
         nics: 
           - port-name: guest1
         auto_ip: false
         wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          apt remove -y git-all ansible;{% endraw %}
     - name: Create one workstation host
       openstack.cloud.server:
         state: present
         name: workstation_machine1
-        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
         flavor: large
         nics: 
           - port-name: workstation1
         auto_ip: false
         wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          rm -rf CMMC-Compliance-Project;
+          apt remove -y git-all ansible;{% endraw %}
     - name: Create an office host
       openstack.cloud.server:
         state: present
         name: jim_desktop
-        image: 508356e0-c982-4341-abb6-b5f9225f3bf5
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
         flavor: large
         nics: 
           - port-name: office1
         auto_ip: false
         wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          rm -rf CMMC-Compliance-Project;
+          apt remove -y git-all ansible;{% endraw %}
     - name: Create a router connecting the networks
       openstack.cloud.router:
         state: present

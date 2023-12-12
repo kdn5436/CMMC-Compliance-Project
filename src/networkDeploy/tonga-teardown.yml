@@ -12,19 +12,26 @@
       openstack.cloud.server:
         state: absent
         name: jim_desktop
+    - name: delete port on office
+      openstack.cloud.port:
+        state: absent
+        name: office1
+        network: tonga_net
+    - name: delete port on workstation
+      openstack.cloud.port:
+        state: absent
+        name: workstation1
+        network: tonga_net
+    - name: delete port on guest
+      openstack.cloud.port:
+        state: absent
+        name: guest1
+        network: tonga_net
     - name: Remove Tonga Router
       openstack.cloud.router:
         state: absent
         name: router2
-    - name: create guest network
+    - name: delete guest network
       openstack.cloud.network:
         state: absent
-        name: guest_net
-    - name: create guest network
-      openstack.cloud.network:
-        state: absent
-        name: workstation_net
-    - name: create guest network
-      openstack.cloud.network:
-        state: absent
-        name: office_net
+        name: tonga_net
