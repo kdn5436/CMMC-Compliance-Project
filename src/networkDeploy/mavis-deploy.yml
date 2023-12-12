@@ -1,0 +1,158 @@
+- hosts: localhost
+  tasks:
+    - name: update security group tcp rule
+      openstack.cloud.security_group_rule:
+        security_group: default
+        protocol: tcp
+        remote_ip_prefix: 0.0.0.0/0
+    - name: update security group udp rule
+      openstack.cloud.security_group_rule:
+        security_group: default
+        protocol: udp
+        remote_ip_prefix: 0.0.0.0/0
+    - name: update security group icmp rule
+      openstack.cloud.security_group_rule:
+        security_group: default
+        protocol: icmp
+        remote_ip_prefix: 0.0.0.0/0
+    - name: create mavis network
+      openstack.cloud.network:
+        state: present
+        name: mavis_net
+        external: false
+        port_security_enabled: false
+    - name: create guest subnet
+      openstack.cloud.subnet:
+        state: present
+        network_name: mavis_net
+        name: guest_net
+        cidr: 192.168.0.0/24
+        gateway_ip: 192.168.0.1
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
+      register: guest_subnet_output
+    - name: create manufacturing subnet
+      openstack.cloud.subnet:
+        state: present
+        network_name: mavis_net
+        name: manufacturing_net
+        cidr: 192.168.1.0/24
+        gateway_ip: 192.168.1.1
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
+      register: manufacturing_subnet_output
+    - name: create warehouse subnet
+      openstack.cloud.subnet:
+        state: present
+        network_name: mavis_net
+        name: warehouse_net
+        cidr: 192.168.2.0/24
+        gateway_ip: 192.168.2.1
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
+      register: warehouse_subnet_output
+    - name: create executive subnet
+      openstack.cloud.subnet:
+        state: present
+        network_name: executive
+        name: executive_net
+        cidr: 192.168.3.0/24
+        gateway_ip: 192.168.3.1
+        dns_nameservers:
+           - 8.8.8.7
+           - 8.8.8.8
+      register: warehouse_subnet_output
+    - name: create port with fixed ip on guest
+      openstack.cloud.port:
+        state: present
+        name: guest1
+        network: mavis_net
+        fixed_ips: 
+          - subnet_id: "{{ guest_subnet_output.id }}"
+    - name: create port with fixed ip on manufacturing
+      openstack.cloud.port:
+        state: present
+        name: manufacturing1
+        network: mavis_net
+        fixed_ips: 
+          - subnet_id: "{{ manufacturing_subnet_output.id }}"
+    - name: create port with fixed ip on warehouse
+      openstack.cloud.port:
+        state: present
+        name: warehouse1
+        network: mavis_net
+        fixed_ips: 
+          - subnet_id: "{{ warehouse_subnet_output.id }}"
+    - name: Create one guest host
+      openstack.cloud.server:
+        state: present
+        name: guest_laptop
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
+        flavor: large
+        nics: 
+          - port-name: guest1
+        auto_ip: false
+        wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          apt remove -y git-all ansible;{% endraw %}
+    - name: Create one manufacturing host
+      openstack.cloud.server:
+        state: present
+        name: manufacturing_machine1
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
+        flavor: large
+        nics: 
+          - port-name: manufacturing1
+        auto_ip: false
+        wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          rm -rf CMMC-Compliance-Project;
+          apt remove -y git-all ansible;{% endraw %}
+    - name: Create an warehouse host
+      openstack.cloud.server:
+        state: present
+        name: jim_desktop
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
+        flavor: large
+        nics: 
+          - port-name: warehouse1
+        auto_ip: false
+        wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          rm -rf CMMC-Compliance-Project;
+          apt remove -y git-all ansible;{% endraw %}
+    - name: Create a router connecting the networks
+      openstack.cloud.router:
+        state: present
+        name: router2
+        network: MAIN-NAT
+        interfaces:
+          - net: mavis_net
+            subnet: warehouse_net
+          - net: mavis_net
+            subnet: manufacturing_net
+          - net: mavis_net
+            subnet: guest_net
+          - net: mavis_net
+            subnet: executive_net
