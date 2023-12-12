@@ -4,8 +4,10 @@ import os, dotenv
 import yaml
 
 dotenv.load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.organization = os.getenv("OPENAI_ORG_ID")
 
-L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../../ref/json/cmmc_v2_L3.json')
+L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../../ref/json/cmmc_v2_L1.json')
 # CLIENT = openai.Client(api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID"))
 # def win10_task_relevant_info(task: dict, is_subtask: bool = False):
 #     name = task["name"].split(" | ")[3]
@@ -15,6 +17,7 @@ L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../../ref/json/cmmc_v2_
 #     implementation_key = [key for key in task.keys() if key.startswith("ansible") and not "debug" in key]
 #     implementation = yaml.dump({key:task[key] for key in implementation_key})
 #     return name, task_type, implementation
+
 
 def win10_task_relevant_info(task: dict):
     if "\n" in task["name"]:
@@ -32,10 +35,10 @@ def win10_task_relevant_info(task: dict):
         implementation_key = [key for key in task.keys() if key != "when" and key != "tags" and key != "name"]
         implementation = yaml.dump({key:task[key] for key in implementation_key})
 
-    print(f"Task ID: {id}")
-    print(f"Task Name: {name}")
-    print(f"Task Type: {task_type}")
-    print(f"Task Implementation: {implementation}")
+    # print(f"Task ID: {id}")
+    # print(f"Task Name: {name}")
+    # print(f"Task Type: {task_type}")
+    # print(f"Task Implementation: {implementation}")
     
     return id, name, task_type, implementation
 
@@ -54,16 +57,18 @@ def classify_control(name: str, implementation: str) -> (str, int):
     """
 
     sys_msg = [{"role": "system", "content": sys_msg_content}]
-
     task_content = f"""Task Description:
     {name}
     Task Implementation:
     {implementation}
     """
-
+    print(sys_msg[0]["content"])
+    # print("------")
+    # print(task_content)
+    return
     task_msg = [{"role": "user", "content": task_content}]
 
-    response = CLIENT.chat.completions.create(
+    response = openai.ChatCompletion.create(
         model="gpt-4-1106-preview",
         temperature=0.0,
         messages=sys_msg + task_msg,
@@ -109,8 +114,10 @@ def main():
     with open("testyaml.yml", 'r') as f:
         tasks = yaml.load(f.read(), Loader=yaml.FullLoader)
         for task in tasks:
-            win10_task_relevant_info(task)
-            print("\n\n")
+            id, name, typ, impl = win10_task_relevant_info(task)
+            classify_control(name, impl)
+            # print(L1_CONTROLS_SYSTEM_MSG)
+            # classify_control(name, impl)
 
 if __name__ == '__main__':
     main()
