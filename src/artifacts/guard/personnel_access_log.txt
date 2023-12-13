@@ -1,0 +1,88 @@
+---
+
+**Personnel Access Log**
+
+**Date:** [Insert Date]
+**Log Prepared By:** Sal Curity, Security Guard; Recent Logins
+**Purpose:** This log records the entry and exit of personnel into secure buildings, notes any denied access, and includes details on employee terminations, transfers, and special flags for visitors or maintenance personnel. It also lists systems accessed, where applicable.
+
+---
+
+**Log Entries:**
+
+1. **08:00 AM - John Doe (Senior Database Administrator)**
+   - **Entry:** Granted
+   - **Building:** Data Center
+   - **Systems Accessed:** Operational Databases, Advanced Analytics Tools
+   - **Notes:** First entry as Senior Database Administrator. Access to new systems confirmed.
+
+2. **08:15 AM - Jane Smith (Junior Financial Analyst)**
+   - **Entry:** Granted
+   - **Building:** Finance Department
+   - **Systems Accessed:** Basic Financial Systems
+   - **Notes:** Access to sensitive financial data systems denied post-demotion.
+
+3. **09:00 AM - Bob Johnson (IT Security Analyst)**
+   - **Entry:** Granted
+   - **Building:** IT Security Wing
+   - **Systems Accessed:** Cybersecurity Tools, Incident Response Systems
+   - **Notes:** New role as IT Security Analyst; access to general IT support tools revoked.
+
+4. **09:30 AM - Alice Williams (Compliance Officer)**
+   - **Entry:** Granted
+   - **Building:** Compliance Department
+   - **Systems Accessed:** Regulatory Compliance Tracking, Audit Coordination Tools
+   - **Notes:** Maintained access level with changes to specific systems due to lateral move.
+
+5. **10:00 AM - Michael Brown (Former Marketing Specialist)**
+   - **Entry:** Denied
+   - **Building:** Marketing Department
+   - **Notes:** Employee termination effective as of [Insert Termination Date]. Security notified.
+
+6. **10:30 AM - Sarah Connor (Visitor)**
+   - **Entry:** Granted
+   - **Building:** Main Lobby
+   - **Notes:** Visitor pass issued, escorted by reception to Conference Room B.
+
+7. **11:00 AM - Greg Philips (Maintenance)**
+   - **Entry:** Granted
+   - **Building:** Facilities
+   - **Notes:** Maintenance flag. Scheduled HVAC system check-up.
+
+8. **01:00 PM - Emily White (Transferred Employee)**
+   - **Entry:** Denied
+   - **Building:** Research and Development
+   - **Notes:** Employee transfer to Sales Department not yet reflected in access control system. HR to update records.
+
+9. **02:00 PM - David Lee (IT Support Technician)**
+   - **Entry:** Granted
+   - **Building:** IT Department
+   - **Systems Accessed:** General IT Support Tools
+   - **Notes:** Regular maintenance check on workstations.
+
+10. **03:30 PM - Lisa Green (HR Manager)**
+    - **Entry:** Granted
+    - **Building:** Human Resources
+    - **Systems Accessed:** Employee Records, Payroll System
+    - **Notes:** Routine access for HR management tasks.
+
+11. **04:00 PM - Jack Murphy (Security Personnel)**
+    - **Entry:** Granted
+    - **Building:** All Secure Areas
+    - **Notes:** Security rounds, no systems accessed.
+
+12. **04:30 PM - Rachel Adams (Janitorial Staff)**
+    - **Entry:** Granted
+    - **Building:** Office Complex
+    - **Notes:** Janitorial flag. Evening cleaning schedule.
+
+13. **05:00 PM - Tom Harris (Terminated Employee)**
+    - **Entry:** Denied
+    - **Building:** Engineering Wing
+    - **Notes:** Attempted entry post-termination. Security to remind former employee of revoked access.
+
+---
+
+**Conclusion:**
+
+This Personnel Access Log serves as a record of all personnel movements within the secure buildings on the specified date. It includes details on access granted or denied, special flags for visitors and maintenance, and notes on terminations and transfers. All entries are monitored by the security team and are subject to audit for compliance with company policies and procedures.

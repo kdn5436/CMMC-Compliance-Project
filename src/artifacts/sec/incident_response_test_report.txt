@@ -1,0 +1,75 @@
+INCIDENT RESPONSE TEST REPORT
+--------------------------------------
+Incident Report ID: IR-2023-04-02-001
+Date of Incident: 2023-04-02
+Date of Report: 2023-04-03
+Incident Response Team Lead: Jane Doe
+
+--------------------------------------
+EXECUTIVE SUMMARY:
+
+On April 2, 2023, our monitoring systems detected suspicious activity on two machines within our network: a Windows 10 machine running an older version of Office 365 and an Ubuntu machine with MySQL 8. The incident response team was activated and conducted a simulated response to contain and investigate the incident. This report outlines the key findings, actions taken, and recommendations for future prevention.
+
+--------------------------------------
+INCIDENT DETAILS:
+
+Affected Systems:
+1. Windows 10 Machine (win10-office)
+   - IP Address: 192.168.1.10
+
+2. Ubuntu Machine (ubuntu-mysql)
+   - IP Address: 192.168.1.20
+
+Type of Incident: Unauthorized access and data exfiltration
+
+Initial Attack Vector:
+- Exploitation of known vulnerabilities in Microsoft Office 365 (CVE-2021-XYZ123) and MySQL Server (CVE-2022-XYZ789).
+
+Indicators of Compromise (IoCs):
+- Unusual outbound network traffic
+- Unexpected system processes running
+- Unauthorized database queries on MySQL server
+- Suspicious files found in the Office 365 installation directory
+
+--------------------------------------
+RESPONSE ACTIONS:
+
+1. Incident Detection:
+   - Monitoring systems flagged unusual activity, triggering an alert.
+   - Security team initiated the incident response protocol.
+
+2. Containment:
+   - Network access for the affected machines was temporarily blocked.
+   - User accounts with abnormal activity were disabled.
+
+3. Eradication:
+   - Malicious processes were terminated.
+   - Malicious files were removed from the systems.
+
+4. Recovery:
+   - Systems were patched with the latest security updates.
+   - Affected user accounts' credentials were reset.
+   - Systems were closely monitored for signs of persistent threats.
+
+5. Post-Incident Activity:
+   - A thorough investigation was conducted to understand the scope of the breach.
+   - A security audit was performed to ensure no backdoors were left by the attackers.
+   - All system logs were reviewed for any signs of lateral movement or additional compromise.
+
+--------------------------------------
+LESSONS LEARNED:
+
+- The importance of keeping software up to date with the latest security patches to prevent exploitation of known vulnerabilities.
+- The need for regular vulnerability scans and prompt remediation of identified issues.
+- The effectiveness of an incident response plan and the need for regular testing and updates to the plan.
+
+--------------------------------------
+RECOMMENDATIONS:
+
+- Implement a strict patch management policy to ensure all systems and applications are running the latest versions.
+- Conduct regular security awareness training for employees to recognize and report potential security threats.
+- Enhance monitoring capabilities to detect and respond to incidents more rapidly.
+- Review and update the incident response plan to incorporate lessons learned from this test.
+
+--------------------------------------
+END OF REPORT

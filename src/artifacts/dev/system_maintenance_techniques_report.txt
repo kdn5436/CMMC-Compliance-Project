@@ -1,0 +1,64 @@
+SYSTEM UPGRADE AND MAINTENANCE TOOLS & TECHNIQUES REPORT
+--------------------------------------------------------
+Report Date: 2023-04-03
+Report Prepared By: John Smith
+Purpose: To detail the tools and techniques used during the system upgrades and maintenance actions performed on 2023-04-02
+
+--------------------------------------------------------
+TOOLS AND TECHNIQUES UTILIZED:
+
+1. Office Workstation Upgrades:
+
+   a. RAM Upgrade Tools & Techniques:
+      - Electrostatic Discharge (ESD) Wrist Strap: To prevent static damage to components.
+      - Precision Screwdriver Set: For opening workstation cases and securing RAM modules.
+      - RAM Testing Software: To ensure compatibility and stability of new RAM modules (e.g., MemTest86).
+
+   b. SSD Installation Tools & Techniques:
+      - ESD Mat: To provide a safe surface for handling sensitive electronic components.
+      - Cloning Software: To transfer data from HDDs to SSDs without data loss (e.g., Clonezilla).
+      - Disk Management Tools: For partitioning and formatting new SSDs (e.g., GParted).
+
+   c. New Monitor Installation Tools & Techniques:
+      - Display Calibration Tools: To adjust monitor settings for optimal color accuracy and brightness (e.g., SpyderX Pro).
+      - Cable Management Supplies: Velcro straps and cable channels to organize and secure new monitor cabling.
+
+2. Server Room Enhancements:
+
+   a. UPS Installation Tools & Techniques:
+      - Multimeter: To verify electrical outputs and ensure UPS is functioning correctly.
+      - Rack Mounting Hardware: Screws and rails to securely install the UPS in the server rack.
+      - UPS Management Software: For monitoring UPS status and managing power load (e.g., APC PowerChute).
+
+   b. Server Cooling System Overhaul Tools & Techniques:
+      - Thermal Imaging Camera: To identify hot spots within the server room before and after the overhaul.
+      - Airflow Meters: To measure airflow and ensure efficient cooling post-installation.
+      - Environment Monitoring Systems: Sensors to continuously monitor temperature and humidity levels.
+
+   c. Network Switch Replacement Tools & Techniques:
+      - Network Cable Tester: To ensure all cables are functioning correctly after switch replacement.
+      - Configuration Management Software: To backup and restore network configurations (e.g., SolarWinds Network Configuration Manager).
+      - Network Performance Monitoring Tools: To assess network performance improvements (e.g., Wireshark).
+
+--------------------------------------------------------
+MAINTENANCE ACTIONS:
+
+1. Dust Cleaning and Cable Management:
+   - Compressed Air Cans: To remove dust from hardware components safely.
+   - Cable Ties and Labels: For organizing cables and maintaining a tidy workspace.
+
+2. Hardware Diagnostic Tests:
+   - Diagnostic Software Suite: Comprehensive tools to test system components (e.g., PC-Doctor).
+   - Benchmarking Software: To compare system performance before and after upgrades (e.g., PassMark PerformanceTest).
+
+3. Backup Power Systems Test:
+   - Load Testing Equipment: To simulate power consumption and test UPS load capacity.
+   - Power Quality Analyzer: To measure the quality of power being supplied by the UPS and generators.
+
+--------------------------------------------------------
+ADDITIONAL NOTES:
+
+- All tools were used in accordance with their respective user manuals and safety guidelines.
+
+--------------------------------------------------------
+END OF REPORT 

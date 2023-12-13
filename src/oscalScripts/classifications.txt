@@ -1,0 +1,177 @@
+Systems must be maintained at a supported servicing level.
+So, the output would be: "System Change Management".
+
+The Windows 10 system must use an anti-virus program.
+"Malicious Code Protection"
+
+Local volumes must be formatted using NTFS
+"Security Configuration Enforcement"
+
+Only accounts responsible for the administration of a system must have Administrator rights on the system.
+"Privileged Functions"
+
+Internet Information System (IIS) or its subcomponents must not be installed on a workstation.
+"Nonessential Functionality"
+
+Data Execution Prevention (DEP) must be configured to at least OptOut.
+"Security Configuration Enforcement"
+
+Structured Exception Handling Overwrite Protection (SEHOP) must be enabled.
+"Security Configuration Enforcement"
+
+Administrative accounts must not be used with applications that access the Internet, such as web browsers, or with potential Internet sources, such as email.
+"Privileged Functions"
+
+Reversible password encryption must be disabled.
+"Security Configuration Enforcement"
+
+Credential Guard must be running on Windows 10 domain-joined systems.
+"System Auditing"
+
+Solicited Remote Assistance must not be allowed.
+"Privileged Functions"
+
+Autoplay must be turned off for non-volume devices
+"Nonessential Functionality"
+
+The default autorun behavior must be configured to prevent autorun commands.
+"Nonessential Functionality"
+
+Autoplay must be disabled for all drives.
+"Nonessential Functionality"
+
+The Windows Installer Always install with elevated privileges must be disabled.
+"Privileged Functions"
+
+The Windows Remote Management (WinRM) client must not use Basic authentication.
+"Authorized Access Control"
+
+The Windows Remote Management (WinRM) service must not use Basic authentication.
+"Authorized Access Control"
+
+Anonymous SID/Name translation must not be allowed.
+"Authorized Access Control"
+
+Anonymous enumeration of SAM accounts must not be allowed.
+"Authorized Access Control"
+
+Anonymous enumeration of shares must be restricted.
+"Non-Privileged Account Use"
+
+Anonymous access to Named Pipes and Shares must be restricted.
+"Non-Privileged Account Use"
+
+The system must be configured to prevent the storage of the LAN Manager hash of passwords.
+"Password Complexity"
+
+The LanMan authentication level must be set to send NTLMv2 response only, and to refuse LM and NTLM.
+"Authentication"
+
+The Act as part of the operating system user right must not be assigned to any groups or accounts.
+"Privileged Functions"
+
+The Create a token object user right must not be assigned to any groups or accounts.
+"Privileged Functions"
+
+The Debug programs user right must only be assigned to the Administrators group.
+"Privileged Functions"
+
+The number of allowed bad logon attempts must be configured to 3 or less.
+"Unsuccessful Logon Attempts"
+
+Windows 10 account lockout duration must be configured to 15 minutes or greater.
+"Unsuccessful Logon Attempts"
+
+The period of time before the bad logon counter is reset must be configured to 15 minutes.
+"Unsuccessful Logon Attempts"
+
+Domain-joined systems must use Windows 10 Enterprise Edition 64-bit version.
+"System Auditing"
+
+Windows 10 domain-joined systems must have a Trusted Platform Module (TPM) enabled and ready for use.
+Sorry, this message is too long. Please try a shorter question.
+
+Windows 10 systems must have Unified Extensible Firmware Interface (UEFI) firmware and be configured to run in UEFI mode, not Legacy BIOS.
+"Security Configuration Enforcement"
+
+Windows 10 must employ automated mechanisms to determine the state of system components with regard to flaw remediation using the following frequency: continuously, where HBSS is used; 30 days, for any additional internal network scans not covered by HBSS; and annually, for external scans by Computer Network Defense Service Provider (CNDSP)
+"Flaw Remediation"
+
+Windows 10 information systems must use BitLocker to encrypt all disks to protect the confidentiality and integrity of all information at rest.
+"Data at Rest"
+
+Windows 10 systems must use a BitLocker PIN for pre-boot authentication.
+"Data at Rest"
+
+Windows 10 systems must use a BitLocker PIN with a minimum length of 6 digits for pre-boot authentication.
+"Data at Rest"
+
+The operating system must employ a deny-all, permit-by-exception wn10_AU_000085to allow the execution of authorized software programs.
+Sorry, this message is too long. Please try a shorter question.
+
+Alternate operating systems must not be permitted on the same system.
+"System Change Management"
+
+Non system-created file shares on a system must limit access to groups that require it.
+"Authorized Access Control"
+
+Only accounts responsible for the backup operations must be members of the Backup Operators group.
+"User-Installed Software"
+
+Only authorized user accounts must be allowed to create or run virtual machines on Windows 10 systems.
+"Authorized Access Control"
+
+Accounts must be configured to require password expiration.
+Sorry, this message is too long. Please try a shorter question.
+
+Simple Network Management Protocol (SNMP) must not be installed on the system.
+"Nonessential Functionality"
+
+Simple TCP/IP Services must not be installed on the system.
+"Nonessential Functionality"
+
+The Telnet Client must not be installed on the system.
+"Nonessential Functionality"
+
+The TFTP Client must not be installed on the system.
+"Nonessential Functionality"
+
+Software certificate installation files must be removed from Windows 10.
+Sorry, this message is too long. Please try a shorter question.
+
+A host-based firewall must be installed and enabled on the system.
+Sorry, this message is too long. Please try a shorter question.
+
+Inbound exceptions to the firewall on Windows 10 domain workstations must only allow authorized remote management hosts.
+"Boundary Protection"
+
+The Windows PowerShell 2.0 feature must be disabled on the system.
+"Nonessential Functionality"
+
+The Server Message Block (SMB) v1 protocol must be disabled on the system.
+"Nonessential Functionality"
+
+The Server Message Block (SMB) v1 protocol must be disabled on the SMB server.
+"Nonessential Functionality"
+
+The Server Message Block (SMB) v1 protocol must be disabled on the SMB client.
+"Nonessential Functionality"
+
+The Secondary Logon service must be disabled on Windows 10.
+"Nonessential Functionality"
+
+Orphaned security identifiers (SIDs) must be removed from user rights on Windows 10.
+Sorry, this message is too long. Please try a shorter question.
+
+Bluetooth must be turned off unless approved by the organization.
+Therefore, the title of the control that best represents this task is "Nonessential Functionality".
+
+Bluetooth must be turned off when not in use.
+"Nonessential Functionality"
+
+The system must notify the user when a Bluetooth device attempts to connect.
+"Control Remote Access"
+
+Windows 10 non-persistent VM sessions should not exceed 24 hours.
+"Session Termination"
+

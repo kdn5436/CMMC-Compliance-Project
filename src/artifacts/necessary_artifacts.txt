@@ -1,0 +1,25 @@
+L2:
+- CUI Data Flow Diagram (Control CUI Flow) ✅
+- List of user roles (Separation Of Duties)
+- Risk Report for admins (Role-Based Risk Awareness) ✅
+- Security Training Program (Role-Based Training) ✅
+- Insider Threat Report for security and admins (Insider Threat Awareness) ✅
+- Event Logs *may be covered by STIG (System Auditing)
+- User Login logs *may be covered by STIG (User Accountability)
+- The ansible scripts used to provision systems (System Baselining)
+- System changes with security impact *can be part of system changes (System Change Management, Security Impact Analysis) ✅
+- Access changes *promotions and demotions with access differences (Access Restrictions for Change)✅
+- Incident Response Plan (Incident Handling)✅
+- Incident Response Test Report (Incident Reporting, Incident Response Testing) ✅
+- Historical System updates (Perform Maintenance) ✅
+- Maintenance Tools & Techniques list (System Maintenance Control) ✅
+- Maintenance Tools Static Analysis Report (Media Inspection, Maintenance Personnel) ✅
+- Equipment CUI Sanitization Report (Media Disposal, Equipment Sanitization) ✅
+- Media devices report *list media devices with the following info: contains CUI, contains FCI, is encrypted, owner, storage location (Media Protection, Media Markings, Media Accountability, Portable Storage Encryption, Shared Media) ✅
+- Personnel logs *Log people entering secure areas, terminations and transfers, deny some, list accessed machines, flag as visitor or maintenance (Screen Individuals, Personnel Actions, Limit Physical Access, Escort Visitors, Physical Access Logs, Manage Physical Access) ✅
+- Dated Risk Assessment (Risk Assessments)✅
+- Vulnerability Scan (Vulnerability Scan) ✅
+- Vulnerability Remediation Plan (Vulnerability Remediation) ✅
+- Dated Security Control Assessment *OSCAL Assessment Results (Security Control Assessment, Security Control Monitoring) ✅
+- Plan Of Action & Milestones *OSCAL POA&M (Plan of Action) ✅
+- System Security Plan *OSCAL SSP (System Security Plan) ✅

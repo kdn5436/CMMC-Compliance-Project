@@ -1,0 +1,66 @@
+---
+
+**Insider Threat Report**
+
+**Executive Summary:**
+
+This Insider Threat Report is a supplementary document to the Risk Assessment Report, focusing on the potential risks posed by internal actors within our organization. With the presence of sensitive Federal Contract Information (FCI) and Controlled Unclassified Information (CUI) on our systems, the threat from within is as critical as external threats. This report identifies potential insider threat risks, profiles of concern, and recommended mitigation strategies.
+
+**Identified Insider Threat Risks:**
+
+1. **Risk of Intentional Data Leak by Disgruntled Employee (John Doe):**
+   - **Position:** Database Administrator
+   - **Likelihood:** Medium - Exhibited recent behavioral changes and dissatisfaction with the company.
+   - **Impact:** High - Has direct access to FCI/CUI and could intentionally leak or sell data.
+   - **Risk Level:** High
+
+2. **Risk of Accidental Data Exposure by Careless Employee (Jane Smith):**
+   - **Position:** Financial Analyst
+   - **Likelihood:** High - Has a history of mishandling sensitive documents.
+   - **Impact:** Medium - Could inadvertently expose sensitive data through negligence.
+   - **Risk Level:** Medium
+
+3. **Risk of Unauthorized Access by Overprivileged Employee (Bob Johnson):**
+   - **Position:** IT Support Technician
+   - **Likelihood:** Low - No known malicious intent, but has more system access than necessary for the role.
+   - **Impact:** High - Could potentially access and misuse FCI/CUI due to excessive privileges.
+   - **Risk Level:** Medium
+
+4. **Risk of Exploitation by Compromised Employee (Alice Williams):**
+   - **Position:** Project Manager
+   - **Likelihood:** Low - No direct evidence of compromise, but recently targeted by a phishing campaign.
+   - **Impact:** High - Could be coerced or manipulated into providing access to sensitive systems.
+   - **Risk Level:** Medium
+
+**Potential Business Impacts:**
+
+- **Intellectual Property Theft:** Loss of proprietary information due to intentional leaks by insiders.
+- **Financial Loss:** Costs associated with data breaches, including fines, legal fees, and loss of business.
+- **Reputation Damage:** Erosion of trust from clients and partners due to insider-caused breaches.
+- **Operational Disruption:** Interruption of business activities due to insider sabotage or data manipulation.
+
+**Recommendations:**
+
+1. **Enhanced Background Checks:**
+   - Conduct thorough background checks for all new hires and periodic checks for existing employees with access to sensitive data.
+
+2. **User Activity Monitoring:**
+   - Implement user activity monitoring tools to detect unusual behavior patterns that may indicate insider threats.
+
+3. **Access Controls and Privilege Management:**
+   - Enforce strict access controls and regularly review user privileges to ensure they align with job requirements.
+
+4. **Insider Threat Awareness Training:**
+   - Provide regular training for employees on recognizing and reporting potential insider threats.
+
+5. **Incident Response Plan for Insider Threats:**
+   - Develop and maintain a specific incident response plan for insider threat scenarios, including communication strategies and legal considerations.
+
+6. **Psychological Support and Employee Assistance Programs:**
+   - Offer support programs to help employees cope with stress and reduce the likelihood of disgruntled behavior leading to insider threats.
+
+**Conclusion:**
+
+The potential for insider threats is a significant concern for our organization, particularly due to the sensitive nature of the data we handle. Proactive measures, including improved access controls, monitoring, and employee support, are essential to mitigate the risks posed by insider threats and protect our company's assets, reputation, and compliance with regulatory requirements.
+
+--- 

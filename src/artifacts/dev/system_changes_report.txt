@@ -1,0 +1,65 @@
+SYSTEM CHANGES REPORT
+--------------------------------------
+Report Date: 2023-04-02
+Report Prepared By: Jane Doe
+Scope: Implementation of Recommendations from Vulnerability Scan Dated 2023-04-01
+
+--------------------------------------
+CHANGE LOG:
+
+1. Windows 10 Machine (win10-office):
+
+   a. Microsoft Office 365 Update
+      - Change Description: Updated Microsoft Office 365 to the latest version.
+      - Security Impact Score: High (Positive Impact)
+      - Implementation Date: 2023-04-02
+      - Status: Completed
+
+   b. Windows 10 Operating System Upgrade
+      - Change Description: Upgraded Windows 10 Pro to the latest version.
+      - Security Impact Score: Medium (Positive Impact)
+      - Implementation Date: 2023-04-02
+      - Status: Completed
+
+   c. Installation of New Project Management Software
+      - Change Description: Installed MockProjectManager v2.1.0 to enhance project tracking capabilities.
+      - Security Impact Score: Neutral (No Immediate Security Impact)
+      - Implementation Date: 2023-04-02
+      - Status: Completed
+
+2. Ubuntu Machine (ubuntu-mysql):
+
+   a. MySQL Server Security Patch
+      - Change Description: Applied security patch to MySQL Server 8.0.22 to address privilege escalation vulnerability.
+      - Security Impact Score: High (Positive Impact)
+      - Implementation Date: 2023-04-02
+      - Status: Completed
+
+   b. Ubuntu System Update
+      - Change Description: Performed system update using package manager to apply the latest security patches.
+      - Security Impact Score: Low (Positive Impact)
+      - Implementation Date: 2023-04-02
+      - Status: Completed
+
+   c. Addition of New User Accounts
+      - Change Description: Added new user accounts for the development team to access the MySQL database.
+      - Security Impact Score: Low (Potential Negative Impact if not managed properly)
+      - Implementation Date: 2023-04-02
+      - Status: Completed
+
+   d. Installation of Web Server Software
+      - Change Description: Installed Apache Web Server 2.4.46 for hosting new internal applications.
+      - Security Impact Score: Medium (Negative Impact due to increased attack surface)
+      - Implementation Date: 2023-04-02
+      - Status: Completed
+
+--------------------------------------
+ADDITIONAL NOTES:
+
+- All system changes were implemented during scheduled maintenance windows to minimize business disruption.
+- User training sessions have been scheduled to familiarize staff with the new project management software.
+- Regular monitoring and audit of new user accounts have been planned to ensure compliance with security policies.
+- Additional security measures, such as firewalls and intrusion detection systems, are recommended to mitigate the risks associated with the new web server installation.
+
+--------------------------------------
+END OF REPORT

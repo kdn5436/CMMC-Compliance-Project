@@ -1,0 +1,87 @@
+MEDIA DEVICES REPORT
+--------------------------------------
+Report Date: 2023-04-03
+Report Prepared By: Jane Doe
+Scope: Inventory of Portable and Stationary Media Devices with Security and Ownership Details
+
+--------------------------------------
+PORTABLE MEDIA DEVICES:
+
+1. USB Flash Drives:
+
+   a. Kingston DataTraveler 100 G3 (32GB)
+      - Contains CUI: No
+      - Contains FCI: Yes
+      - Encrypted: Yes (AES 256-bit)
+      - Owner: John Smith, Marketing Department
+      - Storage Location: Locked Drawer, Marketing Office
+
+   b. SanDisk Extreme Pro (64GB)
+      - Contains CUI: Yes
+      - Contains FCI: Yes
+      - Encrypted: Yes (Hardware Encryption)
+      - Owner: Jane Doe, Research and Development
+      - Storage Location: Secure Storage, R&D Lab
+
+2. External Hard Drives:
+
+   a. WD My Passport Ultra (2TB)
+      - Contains CUI: No
+      - Contains FCI: Yes
+      - Encrypted: Yes (WD Security Software)
+      - Owner: Mike Brown, Finance Department
+      - Storage Location: Finance Department Safe
+
+   b. Seagate Backup Plus (4TB)
+      - Contains CUI: Yes
+      - Contains FCI: Yes
+      - Encrypted: Yes (Seagate Secure)
+      - Owner: Sarah Connor, Project Management Office
+      - Storage Location: PMO, Secure Locker
+
+--------------------------------------
+STATIONARY MEDIA DEVICES:
+
+1. Network Attached Storage (NAS) Devices:
+
+   a. Synology DiskStation DS220j (6TB)
+      - Contains CUI: Yes
+      - Contains FCI: Yes
+      - Encrypted: Yes (Synology DSM Encryption)
+      - Owner: IT Department
+      - Storage Location: Server Room, Rack 3
+
+   b. QNAP TS-451+ (8TB)
+      - Contains CUI: No
+      - Contains FCI: Yes
+      - Encrypted: Yes (QNAP Volume Encryption)
+      - Owner: Development Team
+      - Storage Location: Development Team Area, Secure Cabinet
+
+2. Backup Tapes:
+
+   a. HP LTO Ultrium Tape (1.5TB)
+      - Contains CUI: Yes
+      - Contains FCI: Yes
+      - Encrypted: Yes (LTO Hardware Encryption)
+      - Owner: IT Department
+      - Storage Location: Offsite Backup Storage Facility
+
+   b. Sony LTO Ultrium Tape (1.5TB)
+      - Contains CUI: No
+      - Contains FCI: No
+      - Encrypted: No
+      - Owner: General Office Use
+      - Storage Location: Onsite Storage Room, Locked Cabinet
+
+--------------------------------------
+ADDITIONAL NOTES:
+
+- CUI: Controlled Unclassified Information
+- FCI: Federal Contract Information
+- All encrypted devices use approved encryption methods for the protection of sensitive information.
+- Owners are responsible for the secure handling and storage of their assigned media devices.
+- It is recommended to conduct regular audits of media devices to ensure compliance with security policies and data protection standards.
+
+--------------------------------------
+END OF REPORT

@@ -1,0 +1,57 @@
+SENSITIVE INFORMATION SANITIZATION REPORT
+--------------------------------------
+Report Date: 2023-04-04
+Report Prepared By: AI Developer and Planner
+Scope: Sanitization of Discontinued Storage Devices Containing Controlled Unclassified Information (CUI) and Other Data
+
+--------------------------------------
+SANITIZATION LOG:
+
+1. SSDs from Development Workstations:
+
+   a. Device Description: 256GB SATA SSDs replaced during upgrade to 1TB SSDs.
+   b. CUI Presence: Confirmed (Contained source code and development documentation classified as CUI).
+   c. Sanitization Method: Degaussing followed by physical destruction.
+   d. Sanitization Date: 2023-04-03
+   e. Status: Sanitized and Destroyed
+   f. Verification: Third-party verification of destruction with certificate of destruction issued.
+
+2. HDDs from Graphic Design Workstations:
+
+   a. Device Description: 1TB HDDs replaced during upgrade to 32GB RAM (no storage upgrade).
+   b. CUI Presence: Unlikely (Contained graphic design files, not classified as CUI).
+   c. Sanitization Method: Overwritten with DoD 5220.22-M standard three-pass wipe.
+   d. Sanitization Date: 2023-04-03
+   e. Status: Sanitized and Prepared for Recycle/Resale
+   f. Verification: Internal verification log generated post-wipe.
+
+3. Backup Tapes from Server Room:
+
+   a. Device Description: LTO-4 Magnetic Tapes used for server backups.
+   b. CUI Presence: Confirmed (Contained backup data including CUI).
+   c. Sanitization Method: Degaussing followed by shredding.
+   d. Sanitization Date: 2023-04-03
+   e. Status: Sanitized and Destroyed
+   f. Verification: Third-party verification of destruction with certificate of destruction issued.
+
+4. USB Flash Drives:
+
+   a. Device Description: Various USB flash drives used for data transfer.
+   b. CUI Presence: Possible (Used for ad-hoc transfers, potential CUI exposure).
+   c. Sanitization Method: Overwritten with DoD 5220.22-M standard three-pass wipe, followed by physical destruction for drives older than 3 years.
+   d. Sanitization Date: 2023-04-03
+   e. Status: Sanitized, Destroyed (for selected units), or Prepared for Reuse (for newer units)
+   f. Verification: Internal verification log generated post-wipe; destruction logs for older units.
+
+--------------------------------------
+ADDITIONAL NOTES:
+
+- All sanitization methods were chosen based on the sensitivity of the data and the most effective method for the media type.
+- Devices marked for destruction were rendered inoperable and beyond recovery before disposal.
+- Devices prepared for reuse or resale have been thoroughly sanitized and verified to ensure no recoverable data remains.
+- A detailed inventory of all sanitized devices has been logged and is available for audit.
+- Employees handling the sanitization process have been trained in data handling and destruction procedures to ensure compliance with data protection regulations.
+- Future recommendations include implementing an encrypted storage policy for devices that may handle CUI to streamline the sanitization process.
+
+--------------------------------------
+END OF REPORT

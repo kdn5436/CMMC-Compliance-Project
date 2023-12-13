@@ -1,0 +1,308 @@
+{
+    "assessment-results": {
+        "uuid": "1e46695b-36ae-4b97-88a5-7e569d58423a",
+        "metadata": {
+            "title": "Attestation results for TongaTek",
+            "last-modified": "2023-12-13T08:29:37.900Z",
+            "version": "1.0.0",
+            "oscal-version": "1.0.4",
+            "published": "2023-12-13T08:29:37.899Z",
+            "parties": [
+                {
+                    "uuid": "6ee23522-7791-415f-beac-23c7144e66c0",
+                    "type": "organization",
+                    "addresses": [
+                        {
+                            "addr-lines": [
+                                "1 network lane",
+                                ""
+                            ],
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal-code": "10001"
+                        }
+                    ],
+                    "props": [
+                        {
+                            "class": "Producer Info",
+                            "name": "website",
+                            "value": "www.tongatek.com"
+                        }
+                    ],
+                    "name": "TongaTek",
+                    "links": [
+                        {
+                            "href": "www.tongatek.com",
+                            "rel": "website"
+                        }
+                    ]
+                },
+                {
+                    "uuid": "8444b5e2-8ed8-4bbb-a19e-417319dfc123",
+                    "type": "person",
+                    "addresses": [
+                        {
+                            "addr-lines": [
+                                "2 network lane",
+                                "   "
+                            ],
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal-code": "10001"
+                        }
+                    ],
+                    "props": [
+                        {
+                            "class": "Contact Info",
+                            "name": "title",
+                            "value": "CISO"
+                        }
+                    ],
+                    "name": "Jane Doe",
+                    "email-addresses": [
+                        "jane@tongatek.com"
+                    ],
+                    "telephone-numbers": [
+                        "111111111111"
+                    ]
+                }
+            ]
+        },
+        "import-assessment-plan": {
+            "href": ""
+        },
+        "results": [
+            {
+                "uuid": "50de9889-1a71-45e8-a7ab-baee0c08f7e7",
+                "title": "Attestation Results",
+                "description": "Results of the various attestations",
+                "start": "2023-12-13T08:29:37.900Z",
+                "reviewed-controls": {
+                    "props": [
+                        {
+                            "name": "Secure Software Development Attestation Form Requirements",
+                            "value": "0",
+                            "class": "Catalog Order"
+                        }
+                    ],
+                    "links": [],
+                    "control-selections": [
+                        {
+                            "include-controls": [
+                                {
+                                    "control-id": "4e(i)(A)"
+                                },
+                                {
+                                    "control-id": "4e(i)(B)"
+                                },
+                                {
+                                    "control-id": "4e(i)(C)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "attestations": [
+                    {
+                        "responsible-parties": [],
+                        "parts": [
+                            {
+                                "name": "Attestation Title",
+                                "title": "Name of the attestation",
+                                "prose": "Attestation 1",
+                                "class": "Attestation Metadata"
+                            },
+                            {
+                                "name": "4e(i)(A)",
+                                "title": "Compliance status for 4e(i)(A)",
+                                "class": "Compliance",
+                                "prose": "1"
+                            },
+                            {
+                                "name": "4e(i)(A)",
+                                "title": "Explanation for 4e(i)(A)",
+                                "class": "Explanation",
+                                "prose": "Everything Separated"
+                            },
+                            {
+                                "name": "4e(i)(B)",
+                                "title": "Compliance status for 4e(i)(B)",
+                                "class": "Compliance",
+                                "prose": "1"
+                            },
+                            {
+                                "name": "4e(i)(B)",
+                                "title": "Explanation for 4e(i)(B)",
+                                "class": "Explanation",
+                                "prose": "Logging and monitoring happens"
+                            },
+                            {
+                                "name": "4e(i)(C)",
+                                "title": "Compliance status for 4e(i)(C)",
+                                "class": "Compliance",
+                                "prose": "2"
+                            },
+                            {
+                                "name": "4e(i)(C)",
+                                "title": "Explanation for 4e(i)(C)",
+                                "class": "Explanation",
+                                "prose": "No MFA"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "catalogs": [
+        {
+            "uuid": "d152b49c-39b4-4765-a961-75051dcf2293",
+            "metadata": {
+                "title": "Secure Software Development Attestation Form Requirements",
+                "last-modified": "2023-06-26T02:54:38Z",
+                "version": "1.0.0",
+                "oscal-version": "1.0.4",
+                "published": "2023-06-26T02:54:38Z"
+            },
+            "groups": [
+                {
+                    "id": "4e(i)",
+                    "title": "The software was developed and built in secure environments",
+                    "controls": [
+                        {
+                            "id": "4e(i)(A)",
+                            "title": "Separate and protect each environment involved in developing and building software",
+                            "props": [
+                                {
+                                    "name": "NIST SSDF Reference",
+                                    "value": "PO.5.1",
+                                    "class": "References"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4e(i)(B)",
+                            "title": "Regularly logging, monitoring, and auditing trust relationships used for authorization and access to any software development and build environments, andamong components within each environment",
+                            "props": [
+                                {
+                                    "name": "NIST SSDF Reference",
+                                    "value": "PO.5.1",
+                                    "class": "References"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4e(i)(C)",
+                            "title": "Enforcing multi-factor authentication and conditional access across the environments relevant to developing and building software in a manner that minimizes security risk",
+                            "props": [
+                                {
+                                    "name": "NIST SSDF Reference",
+                                    "value": "PO.5.1, PO.5.2",
+                                    "class": "References"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4e(i)(D)",
+                            "title": "Taking consistent and reasonable steps to document, as well as minimize use or inclusion of software products that create undue risk, within the environments used to develop and build software",
+                            "props": [
+                                {
+                                    "name": "NIST SSDF Reference",
+                                    "value": "PO.5.1",
+                                    "class": "References"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4e(i)(E)",
+                            "title": "Encrypting sensitive data, such as credentials, to the extent practicable and based on risk",
+                            "props": [
+                                {
+                                    "name": "NIST SSDF Reference",
+                                    "value": "PO.5.2",
+                                    "class": "References"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4e(i)(F)",
+                            "title": "Implementing defensive cyber security practices, including continuous monitoring of operations and alerts and, as necessary, responding to suspected and confirmed cyber incidents",
+                            "props": [
+                                {
+                                    "name": "NIST SSDF Reference",
+                                    "value": "PO.3.2, PO.3.3, PO.5.1, PO.5.2",
+                                    "class": "References"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "4e(iii)",
+                    "title": "The software producer has made a good-faith effort to maintain trusted source code supply chains by:",
+                    "controls": [
+                        {
+                            "id": "4e(iii)(a)",
+                            "title": "Employing automated tools or comparable processes"
+                        },
+                        {
+                            "id": "4e(iii)(b)",
+                            "title": "Establishing a process that includes reasonable steps to address the security of third-party components and manage related vulnerabilities"
+                        }
+                    ],
+                    "props": [
+                        {
+                            "name": "NIST SSDF Reference",
+                            "value": "PO 1.1, PO.3.1, PO.3.2, PO.5.1, PO.5.2, PS.1.1, PS.2.1, PS.3.1, PW.4.1, PW.4.4, PW 7.1, PW 8.1, RV 1.1",
+                            "class": "References"
+                        }
+                    ]
+                },
+                {
+                    "id": "4e(iv)",
+                    "title": "The software producer employed automated tools or comparable processes that check for security vulnerabilities",
+                    "controls": [
+                        {
+                            "id": "4e(iv)(a)",
+                            "title": "The software producer ensured these processes operate on an ongoing basis and, at a minimum, prior to product, version, or update releases"
+                        },
+                        {
+                            "id": "4e(iv)(b)",
+                            "title": "The software producer has a policy or process to address discovered security vulnerabilities prior to product release"
+                        },
+                        {
+                            "id": "4e(iv)(c)",
+                            "title": "The software producer operates a vulnerability disclosure program and accepts, reviews, and addresses disclosed software vulnerabilities in a timely fashion"
+                        }
+                    ],
+                    "props": [
+                        {
+                            "name": "NIST SSDF Reference",
+                            "value": "PO.4.1, PO.4.2, PS.1.1, PW.2.1, PW.4.4, PW.5.1, PW.6.1, PW.6.2, PW.7.1, PW.7.2, PW.8.2, PW.9.1, PW.9.2,RV.1.1, RV.1.2, RV.1.3, RV.2.1, RV.2.2, RV.3.3",
+                            "class": "References"
+                        }
+                    ]
+                },
+                {
+                    "id": "4e(vi)",
+                    "title": "Provenance data maintenance",
+                    "controls": [
+                        {
+                            "id": "4e(vi)",
+                            "title": "The software producer maintains provenance data for internal and third-party code incorporated into the software"
+                        }
+                    ],
+                    "props": [
+                        {
+                            "name": "NIST SSDF Reference",
+                            "value": "PO.1.3, PO.3.2, PO.5.1, PO.5.2, PS.3.1, PS.3.2, PW.4.1, PW.4.4, RV.1.1, RV.1.2",
+                            "class": "References"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

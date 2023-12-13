@@ -1,3 +1,5 @@
+sys_msg.txt: 2210 tokens
+(sys_msg.txt + avg task length) * # win 10 tasks: 542800 tokens
 CMMC L2 controls ID, Title, Description: 4051 tokens
 CMMC L2 controls Title, Description: 2731 tokens
 CMMC L1 controls ID, Title, Description: 641 tokens

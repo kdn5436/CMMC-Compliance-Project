@@ -1,13 +1,14 @@
-import openai
+from openai import OpenAI
 from parse_cmmc_catalog import get_control_llm_system_message
 import os, dotenv
 import yaml
 
+# client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID"))
 dotenv.load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.organization = os.getenv("OPENAI_ORG_ID")
 
-L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../../ref/json/cmmc_v2_L1.json')
+
+# L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../../ref/json/cmmc_v2_L1.json')
+L1_CONTROLS_SYSTEM_MSG = open('l2_sys_msg_ctrls.txt', 'r').read()
 # CLIENT = openai.Client(api_key=os.getenv("OPENAI_API_KEY"), organization=os.getenv("OPENAI_ORG_ID"))
 # def win10_task_relevant_info(task: dict, is_subtask: bool = False):
 #     name = task["name"].split(" | ")[3]
@@ -21,7 +22,7 @@ L1_CONTROLS_SYSTEM_MSG = get_control_llm_system_message('../../ref/json/cmmc_v2_
 
 def win10_task_relevant_info(task: dict):
     if "\n" in task["name"]:
-        name = task["name"].replace('"', "").replace("'", "")[:-1]
+        name = "; ".join(map(lambda x: x.split(" | ")[3], task["name"].replace('"', "").replace("'", "")[:-1].split("\n")))
         # TODO below uses the same type as the first for each. hacky but should be fine
         id = task["name"].split("\n")[0].split(" | ")[1]
         task_type = task["name"].split("\n")[0].split(" | ")[2]
@@ -42,33 +43,29 @@ def win10_task_relevant_info(task: dict):
     
     return id, name, task_type, implementation
 
-def classify_control(name: str, implementation: str) -> (str, int):
-    sys_msg_content = f"""
-    You are a component in a program that maps an ansible security implementation to a relevant security control in compliance with the CMMC Model V2 Security controls.
-    You will be given an ansible task that implements a security control, and you will be respond with the ID of the security control that best represents the ansible task.
-    Below is a list of CMMC Model V2 Level 1 Security Controls.  For each control, there is it's ID and Title, followed by a description of what the control requires.
-
-    Controls:
-    ```
-    {L1_CONTROLS_SYSTEM_MSG}
-    ```
-
-    If the provided task is not relevant to any of the controls, respond with the word "NONE".
-    """
-
+def classify_control(name: str, implementation: str):
+#     sys_msg_content = f"""You are a component in a program that maps an ansible security implementation to a relevant security control in compliance with the CMMC Model V2 Security controls.
+# You will be given an ansible task that implements a security control, and you will be respond with the ID of the security control that best represents the ansible task.
+# Below is a list of CMMC Model V2 Level 1 Security Controls.  For each control, there is it's ID and Title, followed by a description of what the control requires.
+# Controls:
+# ```
+# {L1_CONTROLS_SYSTEM_MSG}
+# ```
+# If the provided task is not relevant to any of the controls, respond with the word 'NONE'."""
+    sys_msg_content = open('sys_msg.txt', 'r').read()
     sys_msg = [{"role": "system", "content": sys_msg_content}]
     task_content = f"""Task Description:
     {name}
     Task Implementation:
     {implementation}
     """
-    print(sys_msg[0]["content"])
+    print(sys_msg[0]["content"].replace("\n\n", "\n"))
     # print("------")
     # print(task_content)
     return
     task_msg = [{"role": "user", "content": task_content}]
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4-1106-preview",
         temperature=0.0,
         messages=sys_msg + task_msg,
@@ -102,9 +99,9 @@ def classify_controls_in_task_win10(task_filepath: str):
 
                 
 
-            output, tokens = classify_control(name, implementation)
-            classifications.append({id: output})
-            used_tokens += tokens
+            # output, tokens = classify_control(name, implementation)
+            # classifications.append({id: output})
+            # used_tokens += tokens
 
     return classifications, used_tokens
 
@@ -115,7 +112,11 @@ def main():
         tasks = yaml.load(f.read(), Loader=yaml.FullLoader)
         for task in tasks:
             id, name, typ, impl = win10_task_relevant_info(task)
-            classify_control(name, impl)
+            # classify_control(name, impl)
+            print(name)
+            print("---")
+            print(impl)
+            print("------")
             # print(L1_CONTROLS_SYSTEM_MSG)
             # classify_control(name, impl)
 
