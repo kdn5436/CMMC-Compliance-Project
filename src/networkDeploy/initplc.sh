@@ -4,7 +4,7 @@
 # Chinda's Chickens.  This script needs to be run as root because there are
 # commands that need elevated privileges.  This is to be added to the Ansible
 # setup for each workstation.
-# USAGE: bash initplc.sh <username>
+# USAGE: bash initplc.sh <username> <password>
 
 
 apt update;
@@ -17,6 +17,7 @@ git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
 ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
 rm -rf CMMC-Compliance-Project;
 apt remove -y git-all ansible;
+apt autoremove;
 mkdir openplc;
 cd openplc;
 wget https://autonomylogic.com/wp-content/uploads/files/OpenPLC%20Editor%20for%20Linux.zip;
