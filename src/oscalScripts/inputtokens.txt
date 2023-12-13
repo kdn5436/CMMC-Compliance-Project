@@ -1,0 +1,8 @@
+CMMC L2 controls ID, Title, Description: 4051 tokens
+CMMC L2 controls Title, Description: 2731 tokens
+CMMC L1 controls ID, Title, Description: 641 tokens
+CMMC L1 controls Title, Description: 437 tokens
+SYS_MSG + CMMC L2 controls ID, Title, Description: 4051 tokens
+SYS_MSG + CMMC L2 controls Title, Description: 2731 tokens
+SYS_MSG + CMMC L1 controls ID, Title, Description: 641 tokens
+SYS_MSG + CMMC L1 controls Title, Description: 437 tokens

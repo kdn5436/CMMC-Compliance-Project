@@ -1,10 +1,10 @@
 #!/bin/bash
 # This script downloads all of the needed utilities for the CMMC project and
-# installs them. This script needs to be run as root because there are commands
-# that need elevated privileges.  This is to be added to the Ansible setup for
-# each workstation.
-# The '$1' is the parameter passed into the bash script.
-# USAGE: sudo bash initScript.sh <username> <password>
+# installs them. It also goes the extra step to download the plc editor for
+# Chinda's Chickens.  This script needs to be run as root because there are
+# commands that need elevated privileges.  This is to be added to the Ansible
+# setup for each workstation.
+# USAGE: bash initplc.sh <username> <password>
 
 
 apt update;
@@ -18,4 +18,10 @@ ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src
 rm -rf CMMC-Compliance-Project;
 apt remove -y git-all ansible;
 apt autoremove;
+mkdir openplc;
+cd openplc;
+wget https://autonomylogic.com/wp-content/uploads/files/OpenPLC%20Editor%20for%20Linux.zip;
+unzip OpenPLC\ Editor\ for\ Linux.zip;
+cd OpenPLC_Editor/;
+bash install.sh;
 systemctl reboot;
