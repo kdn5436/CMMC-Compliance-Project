@@ -57,18 +57,25 @@
     - name: create executive subnet
       openstack.cloud.subnet:
         state: present
-        network_name: executive
+        network_name: mavis_net
         name: executive_net
         cidr: 192.168.3.0/24
         gateway_ip: 192.168.3.1
         dns_nameservers:
            - 8.8.8.7
            - 8.8.8.8
-      register: warehouse_subnet_output
+      register: executive_subnet_output
     - name: create port with fixed ip on guest
       openstack.cloud.port:
         state: present
         name: guest1
+        network: mavis_net
+        fixed_ips: 
+          - subnet_id: "{{ guest_subnet_output.id }}"
+    - name: create port with fixed ip on guest
+      openstack.cloud.port:
+        state: present
+        name: conference_room
         network: mavis_net
         fixed_ips: 
           - subnet_id: "{{ guest_subnet_output.id }}"
@@ -86,6 +93,20 @@
         network: mavis_net
         fixed_ips: 
           - subnet_id: "{{ warehouse_subnet_output.id }}"
+    - name: create port2 with fixed ip on warehouse
+      openstack.cloud.port:
+        state: present
+        name: warehouse2
+        network: mavis_net
+        fixed_ips: 
+          - subnet_id: "{{ warehouse_subnet_output.id }}"
+    - name: create port with fixed ip on guest
+      openstack.cloud.port:
+        state: present
+        name: executive1
+        network: mavis_net
+        fixed_ips: 
+          - subnet_id: "{{ executive_subnet_output.id }}"
     - name: Create one guest host
       openstack.cloud.server:
         state: present
@@ -94,6 +115,24 @@
         flavor: large
         nics: 
           - port-name: guest1
+        auto_ip: false
+        wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          apt remove -y git-all ansible;{% endraw %}
+    - name: Create conference_room host
+      openstack.cloud.server:
+        state: present
+        name: conference-room
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
+        flavor: large
+        nics: 
+          - port-name: conference_room
         auto_ip: false
         wait: true
         userdata: |
@@ -126,11 +165,49 @@
     - name: Create an warehouse host
       openstack.cloud.server:
         state: present
-        name: jim_desktop
+        name: warehouse1
         image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
         flavor: large
         nics: 
           - port-name: warehouse1
+        auto_ip: false
+        wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          rm -rf CMMC-Compliance-Project;
+          apt remove -y git-all ansible;{% endraw %}
+    - name: Create an warehouse host
+      openstack.cloud.server:
+        state: present
+        name: warehouse2
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
+        flavor: large
+        nics: 
+          - port-name: warehouse2
+        auto_ip: false
+        wait: true
+        userdata: |
+          {%- raw -%}#!/bin/bash
+          apt update;
+          apt full-upgrade -y;
+          apt install -y git-all ansible;
+          git clone https://github.com/kdn5436/CMMC-Compliance-Project.git;
+          ansible-playbook -c local -i 127.0.0.1, -l 127.0.0.1 CMMC-Compliance-Project/src/stiglevel2/ubuntu2004-stig.yml;
+          rm -rf CMMC-Compliance-Project;
+          apt remove -y git-all ansible;{% endraw %}
+    - name: Create an executive host
+      openstack.cloud.server:
+        state: present
+        name: executive_ceo
+        image: 68a4ff73-fa5f-4e35-8abf-5f4b459b0f2c
+        flavor: large
+        nics: 
+          - port-name: executive1
         auto_ip: false
         wait: true
         userdata: |
